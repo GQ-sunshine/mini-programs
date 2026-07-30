@@ -23,7 +23,7 @@ Page({
     orderList: [],
     listLoading: 0,
     pullDownRefreshing: false,
-    emptyImg: 'https://cdn-we-retail.ym.tencent.com/miniapp/order/empty-order-list.png',
+    emptyImg: 'https://miniprogram.tcsas-superapp.com/miniapp/order/empty-order-list.png',
     backRefresh: false,
     status: -1,
   },

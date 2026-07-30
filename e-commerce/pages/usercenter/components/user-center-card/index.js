@@ -21,7 +21,7 @@ Component({
   },
   data: {
     lang: app.globalData.lang,
-    defaultAvatarUrl: 'https://cdn-we-retail.ym.tencent.com/miniapp/usercenter/icon-user-center-avatar@2x.png',
+    defaultAvatarUrl: 'https://miniprogram.tcsas-superapp.com/miniapp/usercenter/icon-user-center-avatar@2x.png',
     AuthStepType,
   },
   methods: {

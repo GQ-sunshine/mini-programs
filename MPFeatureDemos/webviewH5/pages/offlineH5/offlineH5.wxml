@@ -1,0 +1,3 @@
+<view class="container">
+  <web-view src="{{webURL}}" bindevent="bindevent"></web-view>
+</view>

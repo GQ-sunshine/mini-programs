@@ -223,13 +223,13 @@ Page({
 
      getWeekday: function (week) {
           var weekday = new Array(7)
-          weekday[0] = i18n['周日']
           weekday[1] = i18n['周一']
           weekday[2] = i18n['周二']
           weekday[3] = i18n['周三']
           weekday[4] = i18n['周四']
           weekday[5] = i18n['周五']
           weekday[6] = i18n['周六']
+          weekday[7] = i18n['周日']
 
           return weekday[week];
      },
@@ -359,6 +359,9 @@ Page({
       * 用户点击右上角分享
       */
      onShareAppMessage: function () {
-
+          return {
+               title: `${i18n['探索Hotel，发现您的理想住宿']}`,
+               path: '/pages/homePage/homePage'
+          }
      }
 })

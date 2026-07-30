@@ -23,3 +23,8 @@ Page {
     margin: 20rpx;
 }
 
+.describe {
+    margin: 20rpx 60rpx;
+    font-size: 12px;
+}
+

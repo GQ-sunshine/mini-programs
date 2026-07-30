@@ -1,5 +1,5 @@
-import { mockIp, mockReqId } from '../../utils/mock';
-import i18n from '../../i18n/index'
+import { mockIp, mockReqId } from "../../utils/mock";
+import i18n from "../../i18n/index";
 
 export const transformGoodsDataToConfirmData = (goodsDataList) => {
   const list = [];
@@ -24,7 +24,7 @@ export const transformGoodsDataToConfirmData = (goodsDataList) => {
       skuSpecLst: goodsData.specInfo,
       promotionIds: null,
       weight: 0.0,
-      unit: i18n.t('KG'),
+      unit: i18n.t("KG"),
       volume: null,
       masterGoodsType: 0,
       viceGoodsType: 0,
@@ -46,34 +46,34 @@ export function genSettleDetail(params) {
       userAddress: null,
       totalGoodsCount: 3,
       packageCount: 1,
-      totalAmount: '289997',
-      totalPayAmount: '',
-      totalDiscountAmount: '110000',
-      totalPromotionAmount: '1100',
-      totalCouponAmount: '0',
-      totalSalePrice: '289997',
-      totalGoodsAmount: '289997',
-      totalDeliveryFee: '0',
+      totalAmount: "289997",
+      totalPayAmount: "",
+      totalDiscountAmount: "110000",
+      totalPromotionAmount: "1200",
+      totalCouponAmount: "0",
+      totalSalePrice: "289997",
+      totalGoodsAmount: "289997",
+      totalDeliveryFee: "0",
       invoiceRequest: null,
       skuImages: null,
       deliveryFeeList: null,
       storeGoodsList: [
         {
-          storeId: '1000',
-          storeName: i18n.t('Cloud Mall Shenzhen flagship store'),
+          storeId: "1000",
+          storeName: i18n.t("Cloud Mall Shenzhen flagship store"),
           remark: null,
           goodsCount: 1,
-          deliveryFee: '0',
+          deliveryFee: "0",
           deliveryWords: null,
-          storeTotalAmount: '0',
-          storeTotalPayAmount: '179997',
-          storeTotalDiscountAmount: '110000',
-          storeTotalCouponAmount: '0',
+          storeTotalAmount: "0",
+          storeTotalPayAmount: "179997",
+          storeTotalDiscountAmount: "110000",
+          storeTotalCouponAmount: "0",
           skuDetailVos: [],
           couponList: [
             {
               couponId: 11,
-              storeId: '1000',
+              storeId: "1000",
             },
           ],
         },
@@ -84,7 +84,7 @@ export function genSettleDetail(params) {
       abnormalDeliveryGoodsList: null,
       invoiceSupport: 1,
     },
-    code: 'Success',
+    code: "Success",
     msg: null,
     requestId: mockReqId(),
     clientIp: mockIp(),
@@ -102,7 +102,7 @@ export function genSettleDetail(params) {
 
   if (couponList && couponList.length > 0) {
     couponList.forEach((coupon) => {
-      if (coupon.status === 'default') {
+      if (coupon.status === "default") {
         discountPrice.push({
           type: coupon.type,
           value: coupon.value,
@@ -134,11 +134,8 @@ export function genSettleDetail(params) {
       : 0;
 
   resp.data.totalSalePrice = totalPrice;
-
   resp.data.totalCouponAmount = totalDiscountPrice;
-
-  resp.data.totalPayAmount =
-    totalPrice - totalDiscountPrice - Number(resp.data.totalPromotionAmount);
+  resp.data.totalPayAmount = totalPrice - totalDiscountPrice - Number(resp.data.totalPromotionAmount);
 
   if (userAddressReq) {
     resp.data.settleType = 1;

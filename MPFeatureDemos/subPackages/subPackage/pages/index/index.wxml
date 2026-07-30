@@ -1,0 +1,4 @@
+<scroll-view class="scroll-area" type="list" scroll-y>
+  <view class="intro">This is the subPackage page.</view>
+  <image class="intro-img" src="../../assets/test2.png"></image>
+</scroll-view>

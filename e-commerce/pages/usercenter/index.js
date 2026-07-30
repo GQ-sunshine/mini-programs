@@ -1,88 +1,88 @@
-import { fetchUserCenter } from '../../services/usercenter/fetchUsercenter';
-import Toast from 'tdesign-miniprogram/toast/index';
-import i18n from '../../i18n/index';
-import { AuthStepType } from './components/user-center-card/status';
-import { loginFromServer, login, getUser, logout } from '../../utils/fetch';
+import { fetchUserCenter } from "../../services/usercenter/fetchUsercenter";
+import Toast from "tdesign-miniprogram/toast/index";
+import i18n from "../../i18n/index";
+import { AuthStepType } from "./components/user-center-card/status";
+import { loginFromServer, login, getUserName, logout } from "../../utils/fetch";
 const app = getApp();
 
 const menuData = [
   [
     {
-      title: i18n.t('Your addresses'),
-      tit: '',
-      url: '',
-      type: 'address',
+      title: i18n.t("Your addresses"),
+      tit: "",
+      url: "",
+      type: "address",
     },
     {
-      title: i18n.t('Coupons'),
-      tit: '',
-      url: '',
-      type: 'coupon',
+      title: i18n.t("Coupons"),
+      tit: "",
+      url: "",
+      type: "coupon",
     },
     {
-      title: i18n.t('Membership points'),
-      tit: '',
-      url: '',
-      type: 'point',
-    },
-  ],
-  [
-    {
-      title: i18n.t('Help'),
-      tit: '',
-      url: '',
-      type: 'help-center',
-    },
-    {
-      title: i18n.t('Service hotline'),
-      tit: '',
-      url: '',
-      type: 'service',
-      icon: 'service',
+      title: i18n.t("Membership points"),
+      tit: "",
+      url: "",
+      type: "point",
     },
   ],
   [
     {
-      title: i18n.t('Logout'),
-      tit: '',
-      url: '',
-      type: 'logout',
+      title: i18n.t("Help"),
+      tit: "",
+      url: "",
+      type: "help-center",
+    },
+    {
+      title: i18n.t("Service hotline"),
+      tit: "",
+      url: "",
+      type: "service",
+      icon: "service",
+    },
+  ],
+  [
+    {
+      title: i18n.t("Logout"),
+      tit: "",
+      url: "",
+      type: "logout",
     },
   ],
 ];
 
 const orderTagInfos = [
   {
-    title: i18n.t('To pay'),
-    iconName: 'wallet',
+    title: i18n.t("To pay"),
+    iconName: "wallet",
     orderNum: 0,
     tabType: 5,
     status: 1,
   },
   {
-    title: i18n.t('To ship'),
-    iconName: 'deliver',
+    title: i18n.t("To ship"),
+    iconName: "deliver",
     orderNum: 0,
     tabType: 10,
     status: 1,
   },
   {
-    title: i18n.t('To receive'),
-    iconName: 'package',
+    title: i18n.t("To receive"),
+    iconName: "package",
     orderNum: 0,
     tabType: 40,
     status: 1,
   },
   {
-    title: i18n.t('To review'),
-    iconName: 'comment',
+    title: i18n.t("To review"),
+    iconName: "comment",
     orderNum: 0,
     tabType: 60,
     status: 1,
   },
   {
-    title: i18n.t('Returns/Refunds'),
-    iconName: 'exchang',
+    title: i18n.t("Returns/Refunds"),
+    iconName: "exchang",
     orderNum: 0,
     tabType: 0,
     status: 1,
@@ -93,11 +93,11 @@ const getDefaultData = () => ({
   showMakePhone: false,
   lang: app.globalData.lang,
   userInfo: {
-    avatarUrl: '',
-    nickName: `${i18n.t('Logging in')}...`,
-    phoneNumber: '',
+    avatarUrl: "",
+    nickName: `${i18n.t("Logging in")}...`,
+    phoneNumber: "",
   },
-  btnText: i18n.t('click Login'),
+  btnText: i18n.t("click Login"),
   menuData,
   isLogin: false,
   loadingLoadingShow: false,
@@ -105,7 +105,7 @@ const getDefaultData = () => ({
   customerServiceInfo: {},
   currAuthStep: AuthStepType.ONE,
   showKefu: true,
-  versionNo: '',
+  versionNo: "",
 });
 
 Page({
@@ -119,7 +119,7 @@ Page({
     this.getTabBar().init();
     this.init();
   },
-  
+
   async clickLogin() {
     const me = this;
     const { code } = await wx.login();
@@ -128,9 +128,9 @@ Page({
     });
     loginFromServer(
       code,
-      (account) => {
-        wx.showToast({ title: i18n.t('login finish') });
-        login(account);
+      (userInfo) => {
+        wx.showToast({ title: i18n.t("login finish") });
+        login(userInfo);
         me.setData(
           {
             loadingLoadingShow: false,
@@ -144,7 +144,7 @@ Page({
           loadingLoadingShow: false,
         });
         wx.showToast({
-          icon: 'error',
+          icon: "error",
           title: msg,
         });
       },
@@ -154,7 +154,7 @@ Page({
     this.init();
   },
   init() {
-    const usr = getUser();
+    const usr = getUserName();
     if (usr) {
       this.setData({
         isLogin: true,
@@ -178,7 +178,7 @@ Page({
         ...v,
         ...orderInfo[index],
       }));
-      userInfo.nickName = getUser();
+      userInfo.nickName = getUserName();
       this.setData({
         userInfo,
         menuData,
@@ -194,39 +194,39 @@ Page({
     const { type } = currentTarget.dataset;
 
     switch (type) {
-      case 'address': {
-        wx.navigateTo({ url: '/pages/usercenter/address/list/index' });
+      case "address": {
+        wx.navigateTo({ url: "/pages/usercenter/address/list/index" });
         break;
       }
-      case 'service': {
+      case "service": {
         this.openMakePhone();
         break;
       }
-      case 'help-center': {
+      case "help-center": {
         Toast({
           context: this,
-          selector: '#t-toast',
-          message: i18n.t('You clicked Help'),
-          icon: '',
+          selector: "#t-toast",
+          message: i18n.t("You clicked Help"),
+          icon: "",
           duration: 1000,
         });
         break;
       }
-      case 'point': {
+      case "point": {
         Toast({
           context: this,
-          selector: '#t-toast',
-          message: i18n.t('You clicked Membership points'),
-          icon: '',
+          selector: "#t-toast",
+          message: i18n.t("You clicked Membership points"),
+          icon: "",
           duration: 1000,
         });
         break;
       }
-      case 'coupon': {
-        wx.navigateTo({ url: '/pages/coupon/coupon-list/index' });
+      case "coupon": {
+        wx.navigateTo({ url: "/pages/coupon/coupon-list/index" });
         break;
       }
-      case 'logout': {
+      case "logout": {
         //
         wx.showLoading();
         logout();
@@ -238,7 +238,7 @@ Page({
           () => {
             wx.hideLoading();
             wx.showToast({
-              title: i18n.t('logout finish'),
+              title: i18n.t("logout finish"),
             });
           },
         );
@@ -247,9 +247,9 @@ Page({
       default: {
         Toast({
           context: this,
-          selector: '#t-toast',
-          message: i18n.t('Unknown redirection'),
-          icon: '',
+          selector: "#t-toast",
+          message: i18n.t("Unknown redirection"),
+          icon: "",
           duration: 1000,
         });
         break;
@@ -261,14 +261,14 @@ Page({
     const status = e.detail.tabType;
 
     if (status === 0) {
-      wx.navigateTo({ url: '/pages/order/after-service-list/index' });
+      wx.navigateTo({ url: "/pages/order/after-service-list/index" });
     } else {
       wx.navigateTo({ url: `/pages/order/order-list/index?status=${status}` });
     }
   },
 
   jumpAllOrder() {
-    wx.navigateTo({ url: '/pages/order/order-list/index' });
+    wx.navigateTo({ url: "/pages/order/order-list/index" });
   },
 
   openMakePhone() {
@@ -288,7 +288,7 @@ Page({
   gotoUserEditPage() {
     const { currAuthStep } = this.data;
     if (currAuthStep === AuthStepType.TWO) {
-      wx.navigateTo({ url: '/pages/usercenter/person-info/index' });
+      wx.navigateTo({ url: "/pages/usercenter/person-info/index" });
     } else {
       this.fetUseriInfoHandle();
     }
@@ -298,7 +298,7 @@ Page({
     const versionInfo = wx.getAccountInfoSync();
     const { version, envVersion = __wxConfig } = versionInfo.miniProgram;
     this.setData({
-      versionNo: envVersion === 'release' ? version : envVersion,
+      versionNo: envVersion === "release" ? version : envVersion,
     });
   },
 });

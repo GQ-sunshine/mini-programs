@@ -1,0 +1,54 @@
+<!--pages/minePage/minePage.wxml-->
+<view class=".page">
+     <view class="loginHeader">
+          <button class="headerButton" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+               <image src="{{userHead}}" class="userHead" mode="aspectFill" />
+          </button>
+          <text class="userTitle" bindtap="loginTap">{{userTitle}}</text>
+          <button
+               wx:if="{{userTitle !== 'Tap to log in'}}"
+               class="button"
+               type="default"
+               size="mini"
+               bindtap="checkSession">
+               Verify login status
+          </button>
+     </view>
+
+      <view class="settingItem">
+          <text class="caption">Nickname</text>
+          <input type="nickname" class="value" placeholder="Please enter a nickname" bindchange="bindchange" />
+     </view>
+
+     <view class="settingItem">
+          <text class="caption">Phone Number</text>
+          <view wx:if="{{!phoneNumber}}" class="button-view">
+               <button
+                    class="button"
+                    type="default"
+                    size="mini"
+                    open-type="getPhoneNumber"
+                    bindtap="clickGetPhoneNumber"
+                    bindgetphonenumber="handleGetPhoneNumber">
+                    Retrieve phone number
+               </button>
+          </view>
+          <text wx:else class="value">{{phoneNumber}}</text>
+     </view>
+
+     <view class="settingItem">
+          <text class="caption">Email</text>
+          <view wx:if="{{!emailAddress}}" class="button-view">
+               <button
+                    class="button"
+                    type="default"
+                    size="mini"
+                    open-type="getEmailAddress"
+                    bindtap="clickGetEmailAddress"
+                    bindgetemailaddress="handleGetEmailAddress">
+                    Retrieve email
+               </button>
+          </view>
+          <text wx:else class="value">{{emailAddress}}</text>
+     </view>
+</view>

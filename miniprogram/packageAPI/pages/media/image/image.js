@@ -1,7 +1,7 @@
 const sourceType = [['camera'], ['album'], ['camera', 'album']]
 const sizeType = [['compressed'], ['original'], ['compressed', 'original']]
 
-import { i18n,lang } from '../../../../i18n/lang'
+import { i18n, lang } from '../../../../i18n/lang'
 Page({
   onShareAppMessage() {
     return {
@@ -196,6 +196,30 @@ Page({
           },
           fail: (err) => {
             console.log('compressImage fail', err);
+          }
+        })
+      },
+      fail: (err) => {
+        console.log('downloadFile fail', err);
+      }
+    })
+  },
+  cropImage() {
+    wx.downloadFile({
+      url: 'https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg',
+      success: (res) => {
+        console.log('downloadFile success', res);
+        wx.cropImage({
+          src: res.tempFilePath,
+          cropScale: '16:9', // 裁剪比例
+          success: (res) => {
+            console.log('cropImage', res)
+            this.setData({
+              cropImageRes: JSON.stringify(res)
+            })
+          },
+          fail: (err) => {
+            console.log('cropImage', err)
           }
         })
       },

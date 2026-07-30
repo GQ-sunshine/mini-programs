@@ -1,0 +1,50 @@
+<!--pages/userInfo/userInfo.wxml-->
+<view class="userInfo-container">
+     <view class="settingItem">
+          <text class="caption">{{i18n['头像']}}</text>
+          <view class="avatar-empty"></view>
+          <button class="headerButton" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+               <image src="{{userHead}}" class="userHead" mode="aspectFill" />
+          </button>
+     </view>
+     <view class="settingItem">
+          <text class="caption">{{i18n['昵称']}}</text>
+          <input value="{{nickName}}" type="nickname" class="value" placeholder="{{i18n['请输入昵称']}}" bindchange="nickNameChange" />
+     </view>
+
+     <view class="settingItem">
+          <text class="caption">{{i18n['手机号码']}}</text>
+          <view wx:if="{{!phoneNumber}}" class="button-view">
+               <button
+                    class="button"
+                    type="default"
+                    size="mini"
+                    open-type="getPhoneNumber"
+                    bindtap="clickGetPhoneNumber"
+                    bindgetphonenumber="handleGetPhoneNumber">
+                    {{i18n['获取手机号码']}}
+               </button>
+          </view>
+          <text wx:else class="value">{{phoneNumber}}</text>
+     </view>
+
+     <view class="settingItem">
+          <text class="caption">{{i18n['邮箱']}}</text>
+          <view wx:if="{{!emailAddress}}" class="button-view">
+               <button
+                    class="button"
+                    type="default"
+                    size="mini"
+                    open-type="getEmailAddress"
+                    bindtap="clickGetEmailAddress"
+                    bindgetemailaddress="handleGetEmailAddress">
+                    {{i18n['获取邮箱']}}
+               </button>
+          </view>
+          <text wx:else class="value">{{emailAddress}}</text>
+     </view>
+     <view class="button-container">
+          <button class='commonBtn' hover-class='commonBtnHover' bindtap='handleSave' hover-stay-time='100' loading="{{isLoading}}">{{i18n['保存']}}</button>
+          <button class='commonBtn' hover-class='commonBtnHover' bindtap='handleReset' hover-stay-time='100' loading="{{isLoadingReset}}">{{i18n['重置']}}</button>
+     </view>
+</view>

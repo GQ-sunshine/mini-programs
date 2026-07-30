@@ -1,0 +1,41 @@
+<scroll-view class="scroll-container" show-scrollbar="{{false}}" scroll-y="{{true}}" enhanced="{{true}}" bounces="{{false}}">
+  <view class="container">
+    <text>hello this is simple demo</text>
+    <image mode="aspectFill" class="corner" src="../../image/1.png" />
+    <view>
+      <text>
+        Subscribe to unlock new features and if eligible, receive a share of revenue.
+      </text>
+    </view>
+    <image mode="aspectFill" class="corner" src="../../image/2.png" />
+    <view>
+      <text>
+        Subscribe to unlock new features and if eligible, receive a share of revenue.
+      </text>
+    </view>
+    <image mode="aspectFill" class="corner" src="../../image/3.png" />
+    <view>
+      <text>
+        Subscribe to unlock new features and if eligible, receive a share of revenue.
+      </text>
+    </view>
+    <image mode="aspectFill" class="corner" src="../../image/4.png" />
+    <view>
+      <text>
+        Subscribe to unlock new features and if eligible, receive a share of revenue.
+      </text>
+    </view>
+    <image mode="aspectFill" class="corner" src="../../image/5.png" />
+    <view>
+      <text>
+        Subscribe to unlock new features and if eligible, receive a share of revenue.
+      </text>
+    </view>
+    <image mode="aspectFill" class="corner" src="../../image/6.png" />
+    <view>
+      <text>
+        Subscribe to unlock new features and if eligible, receive a share of revenue.
+      </text>
+    </view>
+  </view>
+</scroll-view>

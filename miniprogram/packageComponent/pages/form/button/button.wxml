@@ -25,8 +25,11 @@
         {{t['button6']}}
       </button>
       <button type="primary" open-type="share">{{t['button7']}}</button>
-      <button type="primary" open-type="getPhoneNumber" bindgetphonenumber="handleGetPhoneNumber">
+      <button type="primary" open-type="getPhoneNumber" bindtap="clickGetPhoneNumber" bindgetphonenumber="handleGetPhoneNumber" loading="{{isPhoneLoading}}">
         {{t['button8']}}
+      </button>
+      <button type="primary" open-type="getEmailAddress" bindtap="clickGetEmailAddress"  bindgetemailaddress="handleGetEmailAddress" loading="{{isEmailLoading}}">
+        {{t['button15']}}
       </button>
       <button wx:if="{{canIUseGetUserProfile}}" type="primary" lang="zh_CN" bindtap="handleGetUserProfile">
         {{t['button9']}}

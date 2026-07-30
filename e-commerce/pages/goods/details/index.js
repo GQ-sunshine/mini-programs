@@ -1,14 +1,11 @@
-import Toast from 'tdesign-miniprogram/toast/index';
-import { fetchGood } from '../../../services/good/fetchGood';
-import { fetchActivityList } from '../../../services/activity/fetchActivityList';
-import {
-  getGoodsDetailsCommentList,
-  getGoodsDetailsCommentsCount,
-} from '../../../services/good/fetchGoodsDetailsComments';
+import Toast from "tdesign-miniprogram/toast/index";
+import { fetchGood } from "../../../services/good/fetchGood";
+import { fetchActivityList } from "../../../services/activity/fetchActivityList";
+import { getGoodsDetailsCommentList, getGoodsDetailsCommentsCount } from "../../../services/good/fetchGoodsDetailsComments";
 
-import { cdnBase } from '../../../config/index';
-import { getUser, loginFromServer, login } from '../../../utils/fetch';
-import i18n from '../../../i18n/index';
+import { cdnBase } from "../../../config/index";
+import { getUserName, loginFromServer, login } from "../../../utils/fetch";
+import i18n from "../../../i18n/index";
 
 const imgPrefix = `${cdnBase}/`;
 const app = getApp();
@@ -19,7 +16,7 @@ const obj2Params = (obj = {}, encode = false) => {
   const result = [];
   Object.keys(obj).forEach((key) => result.push(`${key}=${encode ? encodeURIComponent(obj[key]) : obj[key]}`));
 
-  return result.join('&');
+  return result.join("&");
 };
 
 Page({
@@ -41,26 +38,26 @@ Page({
     details: {},
     goodsTabArray: [
       {
-        name: 'Product',
-        value: '', // 空字符串代表置顶
+        name: "Product",
+        value: "", // 空字符串代表置顶
       },
       {
-        name: 'Details',
-        value: 'goods-page',
+        name: "Details",
+        value: "goods-page",
       },
     ],
     storeLogo: `${imgPrefix}common/store-logo.png`,
-    storeName: i18n.t('Cloud mall flagship shop'),
+    storeName: i18n.t("Cloud mall flagship shop"),
     jumpArray: [
       {
-        title: 'Home page',
-        url: '/pages/home/home',
-        iconName: 'home',
+        title: "Home page",
+        url: "/pages/home/home",
+        iconName: "home",
       },
       {
-        title: 'Cart',
-        url: '/pages/cart/index',
-        iconName: 'cart',
+        title: "Cart",
+        url: "/pages/cart/index",
+        iconName: "cart",
         showCartNum: true,
       },
     ],
@@ -69,10 +66,10 @@ Page({
     soldout: false,
     buttonType: 1,
     buyNum: 1,
-    selectedAttrStr: '',
+    selectedAttrStr: "",
     skuArray: [],
-    primaryImage: '',
-    specImg: '',
+    primaryImage: "",
+    specImg: "",
     isSpuSelectPopupShow: false,
     isAllSelectedSku: false,
     buyType: 0,
@@ -83,8 +80,8 @@ Page({
     minSalePrice: 0,
     maxSalePrice: 0,
     list: [],
-    spuId: '',
-    navigation: { type: 'fraction' },
+    spuId: "",
+    navigation: { type: "fraction" },
     current: 0,
     autoplay: true,
     duration: 500,
@@ -131,7 +128,7 @@ Page({
   },
 
   onPageScroll({ scrollTop }) {
-    const goodsTab = this.selectComponent('#goodsTab');
+    const goodsTab = this.selectComponent("#goodsTab");
     goodsTab && goodsTab.onScroll(scrollTop);
   },
 
@@ -166,7 +163,7 @@ Page({
       });
       if (status) return item;
     });
-    this.selectSpecsName(selectedSkuValues.length > 0 ? selectedAttrStr : '');
+    this.selectSpecsName(selectedSkuValues.length > 0 ? selectedAttrStr : "");
     if (skuItem) {
       this.setData({
         selectItem: skuItem,
@@ -189,7 +186,7 @@ Page({
     return Object.keys(selectedSku).reduce((selectedValues, skuKeyStr) => {
       const skuValues = normalizedTree[skuKeyStr];
       const skuValueId = selectedSku[skuKeyStr];
-      if (skuValueId !== '') {
+      if (skuValueId !== "") {
         const skuValue = skuValues.filter((value) => {
           return value.specValueId === skuValueId;
         })[0];
@@ -214,7 +211,7 @@ Page({
       });
     } else {
       this.setData({
-        selectedAttrStr: '',
+        selectedAttrStr: "",
       });
     }
   },
@@ -223,9 +220,9 @@ Page({
     const { isAllSelectedSku } = this.data;
     Toast({
       context: this,
-      selector: '#t-toast',
-      message: isAllSelectedSku ? i18n.t('Add to cart') : i18n.t('Please select a specification'),
-      icon: '',
+      selector: "#t-toast",
+      message: isAllSelectedSku ? i18n.t("Add to cart") : i18n.t("Please select a specification"),
+      icon: "",
       duration: 1000,
     });
   },
@@ -235,9 +232,9 @@ Page({
     if (!isAllSelectedSku) {
       Toast({
         context: this,
-        selector: '#t-toast',
-        message: i18n.t('Please select a specification'),
-        icon: '',
+        selector: "#t-toast",
+        message: i18n.t("Please select a specification"),
+        icon: "",
         duration: 1000,
       });
       return;
@@ -245,7 +242,7 @@ Page({
     this.handlePopupHide();
     const query = {
       quantity: buyNum,
-      storeId: '1',
+      storeId: "1",
       spuId: this.data.spuId,
       goodsName: this.data.details.title,
       skuId: type === 1 ? this.data.skuList[0].skuId : this.data.selectItem.skuId,
@@ -263,7 +260,7 @@ Page({
     let urlQueryStr = obj2Params({
       goodsRequestList: JSON.stringify([query]),
     });
-    urlQueryStr = urlQueryStr ? `?${urlQueryStr}` : '';
+    urlQueryStr = urlQueryStr ? `?${urlQueryStr}` : "";
     const path = `/pages/order/order-confirm/index${urlQueryStr}`;
     wx.navigateTo({
       url: path,
@@ -273,25 +270,25 @@ Page({
   specsConfirm() {
     const { buyType } = this.data;
     if (buyType === 1) {
-      const usr = getUser();
+      const usr = getUserName();
       if (!usr) {
         wx.showModal({
-          title: i18n.t('Quick Login'),
+          title: i18n.t("Quick Login"),
           success: async (res) => {
             if (res.confirm) {
               wx.showLoading();
               const { code } = await wx.login();
               loginFromServer(
                 code,
-                (account) => {
+                (userInfo) => {
                   wx.hideLoading();
-                  login(account);
+                  login(userInfo);
                   this.gotoBuy();
                 },
                 (msg) => {
                   wx.hideLoading();
                   wx.showToast({
-                    icon: 'error',
+                    icon: "error",
                     title: msg,
                   });
                 },
@@ -348,8 +345,8 @@ Page({
       const promotionArray = [];
       activityList.forEach((item) => {
         promotionArray.push({
-          tag: item.promotionSubCode === 'MYJ' ? 'Save' : 'Discount',
-          label: i18n.t('Save ￥99.9 for ￥100'),
+          tag: item.promotionSubCode === "MYJ" ? "Save" : "Discount",
+          label: i18n.t("Save ￥99.9 for ￥100"),
         });
       });
       this.setData({
@@ -370,17 +367,17 @@ Page({
 
   async getCommentsList() {
     try {
-      const code = 'Success';
+      const code = "Success";
       const data = await getGoodsDetailsCommentList();
       const { homePageComments } = data;
-      if (code.toUpperCase() === 'SUCCESS') {
+      if (code.toUpperCase() === "SUCCESS") {
         const nextState = {
           commentsList: homePageComments.map((item) => {
             return {
               goodsSpu: item.spuId,
-              userName: item.userName || '',
+              userName: item.userName || "",
               commentScore: item.commentScore,
-              commentContent: item.commentContent || i18n.t('No reviews submitted'),
+              commentContent: item.commentContent || i18n.t("No reviews submitted"),
               userHeadUrl: item.isAnonymity ? this.anonymityAvatar : item.userHeadUrl || this.anonymityAvatar,
             };
           }),
@@ -388,16 +385,16 @@ Page({
         this.setData(nextState);
       }
     } catch (error) {
-      console.error('comments error:', error);
+      console.error("comments error:", error);
     }
   },
 
   onShareAppMessage() {
     // 自定义的返回信息
     const { selectedAttrStr } = this.data;
-    let shareSubTitle = '';
-    if (selectedAttrStr.indexOf(' ') > -1) {
-      const count = selectedAttrStr.indexOf(' ');
+    let shareSubTitle = "";
+    if (selectedAttrStr.indexOf(" ") > -1) {
+      const count = selectedAttrStr.indexOf(" ");
       shareSubTitle = selectedAttrStr.slice(count + 1, selectedAttrStr.length);
     }
     const customInfo = {
@@ -411,9 +408,9 @@ Page({
   /** 获取评价统计 */
   async getCommentsStatistics() {
     try {
-      const code = 'Success';
+      const code = "Success";
       const data = await getGoodsDetailsCommentsCount();
-      if (code.toUpperCase() === 'SUCCESS') {
+      if (code.toUpperCase() === "SUCCESS") {
         const { badCount, commentCount, goodCount, goodRate, hasImageCount, middleCount } = data;
         const nextState = {
           commentsStatistics: {
@@ -429,7 +426,7 @@ Page({
         this.setData(nextState);
       }
     } catch (error) {
-      console.error('comments statiistics error:', error);
+      console.error("comments statiistics error:", error);
     }
   },
 

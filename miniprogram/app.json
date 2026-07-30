@@ -49,6 +49,7 @@
         "pages/open/other-webview/other-webview",
         "pages/open/external-element/external-element",
         "pages/open/invoke-native-plugin/invoke-native-plugin",
+        "pages/open/avatar-and-nickname/avatar-and-nickname",
         "pages/obstacle-free/aria-component/aria-component",
         "pages/testAnimation/test"
       ]
@@ -81,11 +82,13 @@
         "pages/page/page-scroll/page-scroll",
         "pages/page/get-wxml-node-info/get-wxml-node-info",
         "pages/page/intersection-observer/intersection-observer",
+        "pages/page/native-page/native-page",
         "pages/device/clipboard-data/clipboard-data",
         "pages/device/bluetooth/bluetooth",
         "pages/device/memory/memory",
         "pages/device/device-motion/device-motion",
         "pages/device/nfc/nfc",
+        "pages/device/nfc/nfc-ios-test",
         "pages/device/hce/hce",
         "pages/device/calendar/calendar",
         "pages/device/encrypt/encrypt",
@@ -233,6 +236,11 @@
       "desc": "Your location will be used for the mini-program's location display",
       "desc-en": "where are you? do you know",
       "desc-ar": "انا من السعودية"
+    },
+    "scope.nfc": {
+      "desc": "NFC功能用于读取和写入NFC标签",
+      "desc-en": "NFC is used to read and write NFC tags",
+      "desc-ar": "يستخدم NFC لقراءة وكتابة علامات NFC"
     }
   },
   "sitemapLocation": "sitemap.json",

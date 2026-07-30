@@ -1,0 +1,13 @@
+<wxs module="trans" src="../../i18n/index.wxs"></wxs>
+
+<view class="container">
+    <view class="text-container">{{trans(i18n['welcome'], {name: 'TCSAS'})}}</view>
+    <view class="text-container">{{i18n['current Language']}}</view>
+    <view class="text-container">{{lang}}</view>
+    <view class="text-container">
+        <button bindtap="switchLanguage">{{i18n['Switch Language']}}</button>
+    </view>
+    <view class="text-container">
+        <button bindtap="showMessage">{{i18n['Show Message']}}</button>
+    </view>
+</view>

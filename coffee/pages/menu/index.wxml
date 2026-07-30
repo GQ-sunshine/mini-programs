@@ -23,7 +23,7 @@
                     </swiper-item>
                 </swiper>
             </view>
-            <view scrollAnimationDuration="100" scrollWithAnimation="true" style="width:100%;" wx:for="{{productListDatas}}" wx:for-index="index" wx:for-item="Item">
+            <view scrollAnimationDuration="100" scrollWithAnimation="true" style="width:100%;" wx:for="{{productListDatas}}" wx:for-index="index" wx:for-item="Item" wx:key="ProductId">
                 <view style="padding-top: 50rpx;">
                     <view class="horizontal menu-item-group">
                         <view bindtap="__e" class="menu-item-img-group" data-event-opts="{{[ [ 'tap',[ [ 'ShowProDetail',['$0'],['Item'] ] ] ] ]}}" id="{{'main-'+Item.ProductId}}">

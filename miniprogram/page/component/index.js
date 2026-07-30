@@ -78,7 +78,8 @@ Page({
           // 'open-data',
           'web-view',
           'external-element',
-          'invoke-native-plugin'
+          'invoke-native-plugin',
+          'avatar-and-nickname'
         ]
       }
       // {

@@ -12,7 +12,7 @@ export function getPromotion(baseID = 0, length = 10) {
         tags: item.spuTagList.map((tag) => ({ title: tag.title })),
       };
     }),
-    banner: 'https://cdn-we-retail.ym.tencent.com/tsr/promotion/banner-promotion.png',
+    banner: 'https://miniprogram.tcsas-superapp.com/tsr/promotion/banner-promotion.png',
     time: 1000 * 60 * 60 * 20,
     showBannerDesc: true,
     statusTag: 'running',

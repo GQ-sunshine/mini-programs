@@ -1,0 +1,47 @@
+{
+	"projectid": "mpyzxqg4o9yzw5px_webviewH5",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": false,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"nodeModules": true,
+		"uploadWithSourceMap": true,
+		"uglifyFileName": true,
+		"remoteDebugLogEnable": true,
+		"prefetch": false
+	},
+	"TCMPPLibVersion": "2.1.1",
+	"compileType": "miniprogram",
+	"createTime": 1737426508238,
+	"accessTime": 1737426508238,
+	"packOptions": {
+		"ignore": []
+	},
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"TCMPPappid": "mpyzxqg4o9yzw5px",
+	"projectname": "webviewH5",
+	"scripts": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": []
+		}
+	}
+}

@@ -88,6 +88,10 @@
             compressImage
           </button>
           <view class="view-text">{{compressImageRes}}</view>
+          <button class="view-button" size="mini" plain="true" bindtap="cropImage">
+            cropImage
+          </button>
+          <view class="view-text">{{cropImageRes}}</view>
           <button class="view-button" size="mini" plain="true" data-type="all" bindtap="chooseMessageFile">
             chooseMessageFileAll-{{t['image10']}}
           </button>

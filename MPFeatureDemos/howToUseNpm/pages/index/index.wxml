@@ -1,0 +1,27 @@
+<view class="container">
+    <block wx:if="{{npmInit}}">
+        <view class="title">AES-GCM demo</view>
+        <view class="sub-title"><text>1.plaintext</text></view>
+        <view class="sub-title-value"><text>{{plaintext}}</text></view>
+        <view class="sub-title"><text>2.iv</text></view>
+        <view class="sub-title-value"><text>{{iv}}</text></view>
+        <view class="sub-title"><text>3.secret</text></view>
+        <view class="sub-title-value"><text>{{secret}}</text></view>
+        <view class="sub-title"><text>4.decryptedText</text></view>
+        <view class="sub-title-value"><text>{{decryptedText}}</text></view>
+    </block>
+    <block wx:else>
+        <text class="title">Less than three steps learn how to use NPM</text>
+        <view class="item">
+            1.⁠ run <text class="code">npm init</text>⁠ in root project if this project has no package.json
+        </view>
+        <view class="item">
+            2. run <text class="code">npm install sjcl</text> ⁠to create node_modules
+        </view>
+        <view class="item">
+            3. do miniprogram npm compile menus -> Tool ->  Build npm
+            <image class="guide-image" src="../../assets/guide.png" mode="aspectFit"/>
+        </view>
+        <view></view>
+    </block>
+</view>

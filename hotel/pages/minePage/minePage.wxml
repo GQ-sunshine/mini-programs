@@ -4,6 +4,7 @@
 <view class='loginHeader'>
      <image src='{{userHead}}' class='userHead' mode='aspectFill' bindtap='previewHead' />
      <text class='userTitle' bindtap='loginTap'>{{userTitle}}</text>
+     <image wx:if='{{isLoginSuccess}}' src='{{settingIcon}}' class='settingIcon' mode='aspectFill' bindtap='handleSetting' />
 </view>
 
 <view class='order'>
@@ -24,4 +25,7 @@
 <template is='settingItem' data="{{caption:i18n['我的优惠券'],value:'3' + i18n['张'],needIcon:false}}" />
 <view bindtap="about">
      <template is='settingItem' data="{{caption:i18n['关于'] + 'Dreams',value:'',needIcon:true}}" />
+</view>
+<view wx:if="{{isLoginSuccess}}" bindtap="logout">
+     <template is='settingItem' data="{{caption:i18n['退出登录'],value:'',needIcon:false}}" />
 </view>

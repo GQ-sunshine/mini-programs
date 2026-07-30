@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page of Offline H5</title>
+    <script src="./index.js"></script>
+    <script src="https://tencentcloud.github.io/tcmpp-demo-miniprogram/jssdk/tcmpp-jssdk-1.0.0.js"></script>
+    <style>
+        /* Style to display the message in red */
+        #message {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the H5 Page</h1>
+    <button id="backButton">Go Back</button>
+    <button id="sendMessage">Send Message To MiniProgram</button>
+
+    <!-- Div to display the message in red -->
+    <div id="message"></div>
+
+    <script>
+        if (typeof wx !== 'undefined' && wx.miniProgram?.onWebviewEvent) {
+            // Listen for events from the mini program
+            wx.miniProgram.onWebviewEvent(function(event) {
+                const receiveMessage = event.message;
+                // Display the message in the red content on the page
+                document.getElementById('message').innerText = `I received a message from the miniProgram [ ${receiveMessage} ]`;
+            });
+        } else {
+            document.getElementById('message').innerText = 'The current environment does not support [wx.miniProgram.onWebviewEvent]';
+        }
+
+        document.getElementById('backButton').addEventListener('click', function() {
+            if (typeof wx !== 'undefined' && wx.miniProgram?.navigateBack) {
+                // Go back to the previous page
+                wx.miniProgram.navigateBack({
+                    delta: 1
+                });
+            } else {
+                document.getElementById('message').innerText = 'The current environment does not support [wx.miniProgram.navigateBack]';
+            }
+        });
+
+        document.getElementById('sendMessage').addEventListener('click', function() {
+            if (typeof wx !== 'undefined' && wx.miniProgram?.sendWebviewEvent) {
+                // Send a message to the miniProgram
+                wx.miniProgram.sendWebviewEvent({
+                    message: "Hi miniProgram, I'm offline H5"
+                });
+            } else {
+                document.getElementById('message').innerText = 'The current environment does not support [wx.miniProgram.sendWebviewEvent]';
+            }
+        });
+    </script>
+</body>
+</html>

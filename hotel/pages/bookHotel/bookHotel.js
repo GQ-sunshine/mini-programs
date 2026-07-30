@@ -1,11 +1,35 @@
 // pages/bookHotel/bookHotel.js
 import { i18n } from '../../i18n/lang';
+import Config from '../../utils/configData';
 const app = getApp()
 var roomPrice;
 var hotelName;
 var roomName;
 var startDate;
 var endDate;
+
+function generateOrderNumber() {
+  let orderNumber = '';
+  for (let i = 0; i < 10; i++) {
+    const randomDigit = Math.floor(Math.random() * 10);
+    orderNumber += randomDigit;
+  }
+  return orderNumber;
+}
+
+function getCurrentFormattedTime() {
+  const now = new Date();
+
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0'); 
+  const day = String(now.getDate()).padStart(2, '0');
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+
+  // 拼接成所需格式
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
 
 Page({
 
@@ -49,6 +73,83 @@ Page({
                i18n,
           });
      },
+     orderSubscribe(template_id) {
+          wx.request({
+               url: `${Config.BASEURL}/sendOrderMessage`,
+               method: 'POST',
+               data: {
+                    appid: Config.APPID,
+                    token: app.globalData.userInfo.token,
+                    template_id,
+                    page: 'pages/orderList/orderList?type=todo',
+                    data: {
+                         'thing1': {
+                              value: generateOrderNumber(),
+                         },
+                         'date': {
+                              value: getCurrentFormattedTime(),
+                         },
+                         'thing2': {
+                              value: app.globalData.userInfo.nickName || app.globalData.userInfo.phoneNumber,
+                         },
+                         'character_string': {
+                              value: `${this.data.hotelName}:${this.data.roomName}:${this.data.roomPrice}_${this.data.remark}`
+                         }
+                    }
+               },
+               success: (res) => {
+                    if(res.data.code === 200){
+                         console.log('/sendOrderMessage request success', res)
+                    } else {
+                         console.log('/sendOrderMessage request fail', res)
+                         wx.showModal({
+                              title: '/sendOrderMessage request fail',
+                              confirmText: i18n['确定'],
+                              content: 'The returned code is not equal to 200',
+                              showCancel: false
+                         })
+                    }
+               },
+               fail: (err) => {
+                    console.log('wx.request fail===/sendOrderMessage', err)
+                    wx.showModal({
+                         title: 'wx.request fail',
+                         confirmText: i18n['确定'],
+                         content: err.errMsg,
+                         showCancel: false
+                    })
+               }
+          })
+     },
+     requestSubscribeMessage(tmplIds) {
+          wx.requestSubscribeMessage({
+               tmplIds,
+               success: (res) => {
+                    console.log('wx.requestSubscribeMessage===success', res)
+                    const keysWithAccept = Object.entries(res)
+                    .filter(([key, value]) => value === "accept") // 过滤出值为 "accept" 的项
+                    .map(([key]) => key); // 提取出键
+                    if (keysWithAccept.length > 0) {
+                         this.orderSubscribe(keysWithAccept[0])
+                    } else {
+                         wx.showModal({
+                              title: i18n['没有可用的消息模板'],
+                              confirmText: i18n['确定'],
+                              showCancel: false
+                         })
+                    }
+               },
+               fail: (res) => {
+                    console.log('wx.requestSubscribeMessage===fail', res)
+                    wx.showModal({
+                         title: 'wx.requestSubscribeMessage fail',
+                         confirmText: i18n['确定'],
+                         content: `${res.errMsg}【${res.errCode}】`,
+                         showCancel: false
+                    })
+               }
+          })
+     },
      payOrder(){
           wx.showLoading({
                title: i18n['提交中']
@@ -63,23 +164,29 @@ Page({
                })
           } else {
                wx.request({
-                    url: 'https://tcmpp.woyaojianfei.club/commonOrder',
+                    url: `${Config.BASEURL}/payOrderV3`,
                     method: 'POST',
                     data: {
-                         appid: 'mpvghq4emdne60gv',
-                         attach: "Book a hotel",
-                         body: "Hotel pay order",
-                         total: this.data.roomPrice,
-                         id: app.globalData.userInfo?.id
+                         appid: Config.APPID,
+                         goods_detail: [{
+                              "merchant_goods_id": Math.random().toString(36).substring(2, 12),
+                              "wechatpay_goods_id": Math.floor(Math.random() * 10000).toString(),
+                              "goods_name" : this.data.roomName,
+                              "quantity" : 1,
+                              "unit_price" : this.data.roomPrice
+                         }],
+                         id: app.globalData.userInfo?.id,
+                         token: app.globalData.userInfo?.token
                     },
                     success: (res) => {
+                         console.log('/payOrderV3 request success', res)
                          wx.hideLoading();
                          if(res.data.code === 200){
                               this.requestPayment(res.data)
                          } else {
-                              console.log('wx.request fail===', res)
+                              console.log('/payOrderV3 request fail', res)
                               wx.showModal({
-                                   title: 'wx.request fail',
+                                   title: '/payOrderV3 request fail',
                                    confirmText: i18n['确定'],
                                    content: 'The returned code is not equal to 200',
                                    showCancel: false
@@ -88,7 +195,7 @@ Page({
                     },
                     fail: (err) => {
                          wx.hideLoading();
-                         console.log('wx.request fail===', err)
+                         console.log('wx.request fail===/payOrderV3', err)
                          wx.showModal({
                               title: 'wx.request fail',
                               confirmText: i18n['确定'],
@@ -108,6 +215,9 @@ Page({
                signType,
                timeStamp,
                success: () => {
+                    if(app.globalData.userInfo.token) {
+                         this.requestSubscribeMessage(['mti_wifrQVRYyPPryBIpzDJRQPosdrVFfxxHKefshhh'])
+                    }
                     wx.showLoading({
                          title: i18n['支付成功']
                     })

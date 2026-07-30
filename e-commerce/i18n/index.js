@@ -1,11 +1,11 @@
-import en from './locales/en'
-import bi from './locales/bi';
-import fr from './locales/fr';
+import en from "./locales/en";
+import bi from "./locales/bi";
+import fr from "./locales/fr";
 
 const language = {
   en,
   fr,
-  id: bi
+  id: bi,
 };
 
 class I18n {
@@ -62,7 +62,7 @@ class I18n {
         },
         () => {
           resolve(context["$language"]);
-        }
+        },
       );
     });
   }
@@ -76,8 +76,8 @@ class I18n {
     const textArr = text.match(/\{(.+?)\}+/g) || [];
     let realText = this.locales[this.locale]?.[text] || language.en?.[text] || text;
     textArr.map((item) => {
-      let realKey = item.replace('{', '');
-      realKey = realKey.replace('}', '');
+      let realKey = item.replace("{", "");
+      realKey = realKey.replace("}", "");
       realText = `${params[realKey]}` ? realText.replace(item, params[realKey]) : realText;
       return item;
     });
@@ -90,7 +90,7 @@ let i18nInstance;
 const i18n = {
   init: () => {
     i18nInstance = new I18n();
-    const lang = wx.getSystemInfoSync().language || 'en';
+    const lang = wx.getSystemInfoSync().language || "en";
     i18nInstance.loadTranslations(language);
     i18nInstance.setLocale(lang);
   },
@@ -102,7 +102,7 @@ const i18n = {
   },
   t: (text, params = {}) => {
     return i18nInstance?.$t(text, params);
-  }
-}
+  },
+};
 
 export default i18n;

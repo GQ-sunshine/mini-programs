@@ -1,8 +1,8 @@
-import Dialog from 'tdesign-miniprogram/dialog/index';
-import Toast from 'tdesign-miniprogram/toast/index';
-import { fetchCartGroupData } from '../../services/cart/cart';
-import { getUser } from '../../utils/fetch';
-import i18n from '../../i18n/index';
+import Dialog from "tdesign-miniprogram/dialog/index";
+import Toast from "tdesign-miniprogram/toast/index";
+import { fetchCartGroupData } from "../../services/cart/cart";
+import { getUserName } from "../../utils/fetch";
+import i18n from "../../i18n/index";
 
 Page({
   data: {
@@ -12,7 +12,7 @@ Page({
   // 调用自定义tabbar的init函数，使页面与tabbar激活状态保持一致
   onShow() {
     this.getTabBar().init();
-    const usr = getUser();
+    const usr = getUserName();
     if (usr) {
       this.refreshData();
     } else {
@@ -190,11 +190,9 @@ Page({
     const { currentGoods } = this.findGoods(spuId, skuId);
     Toast({
       context: this,
-      selector: '#t-toast',
-      message: `${isSelected ? i18n.t('Select') : i18n.t('Cancel')}"${
-        currentGoods.title.length > 5 ? `${currentGoods.title.slice(0, 5)}...` : currentGoods.title
-      }"`,
-      icon: '',
+      selector: "#t-toast",
+      message: `${isSelected ? i18n.t("Select") : i18n.t("Cancel")}"${currentGoods.title.length > 5 ? `${currentGoods.title.slice(0, 5)}...` : currentGoods.title}"`,
+      icon: "",
     });
     this.selectGoodsService({ spuId, skuId, isSelected }).then(() => this.refreshData());
   },
@@ -220,16 +218,16 @@ Page({
       if (currentGoods.quantity === stockQuantity && quantity - stockQuantity === 1) {
         Toast({
           context: this,
-          selector: '#t-toast',
-          message: i18n.t('Not enough stock'),
+          selector: "#t-toast",
+          message: i18n.t("Not enough stock"),
         });
         return;
       }
       Dialog.confirm({
-        title: i18n.t('Not enough stock'),
+        title: i18n.t("Not enough stock"),
         content: `Insufficient stock available, only ${stockQuantity} remaining`,
-        confirmBtn: i18n.t('Add all the remaining to cart'),
-        cancelBtn: i18n.t('Cancel'),
+        confirmBtn: i18n.t("Add all the remaining to cart"),
+        cancelBtn: i18n.t("Cancel"),
       })
         .then(() => {
           this.changeQuantityService({
@@ -246,7 +244,7 @@ Page({
 
   goCollect() {
     /** 活动肯定有一个活动ID，用来获取活动banner，活动商品列表等 */
-    const promotionID = '123';
+    const promotionID = "123";
     wx.navigateTo({
       url: `/pages/promotion-detail/index?promotion_id=${promotionID}`,
     });
@@ -269,12 +267,12 @@ Page({
       goods: { spuId, skuId },
     } = e.detail;
     Dialog.confirm({
-      content: i18n.t('Are you sure you want to remove the product?'),
-      confirmBtn: i18n.t('Yes'),
-      cancelBtn: i18n.t('No'),
+      content: i18n.t("Are you sure you want to remove the product?"),
+      confirmBtn: i18n.t("Yes"),
+      cancelBtn: i18n.t("No"),
     }).then(() => {
       this.deleteGoodsService({ spuId, skuId }).then(() => {
-        Toast({ context: this, selector: '#t-toast', message: i18n.t('Product removed successfully.') });
+        Toast({ context: this, selector: "#t-toast", message: i18n.t("Product removed successfully.") });
         this.refreshData();
       });
     });
@@ -284,8 +282,8 @@ Page({
     const { isAllSelected } = event?.detail ?? {};
     Toast({
       context: this,
-      selector: '#t-toast',
-      message: `${isAllSelected ? i18n.t('Cancel') : i18n.t('Click')} ${i18n.t('Select all')}`,
+      selector: "#t-toast",
+      message: `${isAllSelected ? i18n.t("Cancel") : i18n.t("Click")} ${i18n.t("Select all")}`,
     });
     // 调用接口改变全选
   },
@@ -301,10 +299,10 @@ Page({
         });
       });
     });
-    wx.setStorageSync('order.goodsRequestList', JSON.stringify(goodsRequestList));
-    wx.navigateTo({ url: '/pages/order/order-confirm/index?type=cart' });
+    wx.setStorageSync("order.goodsRequestList", JSON.stringify(goodsRequestList));
+    wx.navigateTo({ url: "/pages/order/order-confirm/index?type=cart" });
   },
   onGotoHome() {
-    wx.switchTab({ url: '/pages/home/home' });
+    wx.switchTab({ url: "/pages/home/home" });
   },
 });

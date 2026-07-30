@@ -9,7 +9,8 @@
           "pages/hotelFilter/hotelFilter",
           "pages/bookHotel/bookHotel",
           "pages/orderDetail/orderDetail",
-          "pages/login/login"
+          "pages/login/login",
+          "pages/userInfo/userInfo"
      ],
      "window": {
           "backgroundTextStyle": "light",

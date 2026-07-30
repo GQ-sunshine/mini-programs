@@ -1,5 +1,14 @@
 <view class="main">
    <image class='image' mode='scaleToFill' src='../../res/images/ic_hotel.png'></image>   
-   <button class='commonBtn' hover-class='commonBtnHover' bindtap='login' hover-stay-time='100' loading="{{isLoading}}">{{i18n['授权登录']}}</button>
-   <button class='commonBtn' hover-class='commonBtnHover' bindtap='loginQuick' hover-stay-time='100'>{{i18n['本机号码一键登录']}}</button>
+   <button class='commonBtn' hover-class='commonBtnHover' bindtap='handleLogin' hover-stay-time='100' loading="{{isLoading}}">{{i18n['APP授权登录']}}</button>
+   <button
+      open-type="getPhoneNumber"
+      loading="{{isLoadingPhone}}"
+      class='commonBtn'
+      hover-class='commonBtnHover'
+      bindtap='loginQuick'
+      bindgetphonenumber="handleGetPhoneNumber"
+      hover-stay-time='100'
+   >{{i18n['手机号码一键登录']}}</button>
+   <view class="describe">{{i18n['仅用于演示，重启小程序后登录态清除']}}</view>
 </view>

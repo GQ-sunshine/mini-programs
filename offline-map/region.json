@@ -1,0 +1,1574 @@
+[
+  {
+    "pinyin": "guizhousheng",
+    "name": "贵州省"
+  },
+  {
+    "pinyin": "guiyangshi",
+    "name": "贵阳市"
+  },
+  {
+    "pinyin": "liupanshuishi",
+    "name": "六盘水市"
+  },
+  {
+    "pinyin": "zunyishi",
+    "name": "遵义市"
+  },
+  {
+    "pinyin": "anshunshi",
+    "name": "安顺市"
+  },
+  {
+    "pinyin": "qianxinanbuyizumiaozuzizhizhou",
+    "name": "黔西南布依族苗族自治州"
+  },
+  {
+    "pinyin": "qiandongnanmiaozudongzuzizhizhou",
+    "name": "黔东南苗族侗族自治州"
+  },
+  {
+    "pinyin": "qiannanbuyizumiaozuzizhizhou",
+    "name": "黔南布依族苗族自治州"
+  },
+  {
+    "pinyin": "tongrenshi",
+    "name": "铜仁市"
+  },
+  {
+    "pinyin": "bijieshi",
+    "name": "毕节市"
+  },
+  {
+    "pinyin": "shandongsheng",
+    "name": "山东省"
+  },
+  {
+    "pinyin": "jinanshi",
+    "name": "济南市"
+  },
+  {
+    "pinyin": "qingdaoshi",
+    "name": "青岛市"
+  },
+  {
+    "pinyin": "ziboshi",
+    "name": "淄博市"
+  },
+  {
+    "pinyin": "zaozhuangshi",
+    "name": "枣庄市"
+  },
+  {
+    "pinyin": "dongyingshi",
+    "name": "东营市"
+  },
+  {
+    "pinyin": "yantaishi",
+    "name": "烟台市"
+  },
+  {
+    "pinyin": "weifangshi",
+    "name": "潍坊市"
+  },
+  {
+    "pinyin": "weihaishi",
+    "name": "威海市"
+  },
+  {
+    "pinyin": "jiningshi",
+    "name": "济宁市"
+  },
+  {
+    "pinyin": "taianshi",
+    "name": "泰安市"
+  },
+  {
+    "pinyin": "rizhaoshi",
+    "name": "日照市"
+  },
+  {
+    "pinyin": "laiwushi",
+    "name": "莱芜市"
+  },
+  {
+    "pinyin": "linyishi",
+    "name": "临沂市"
+  },
+  {
+    "pinyin": "dezhoushi",
+    "name": "德州市"
+  },
+  {
+    "pinyin": "liaochengshi",
+    "name": "聊城市"
+  },
+  {
+    "pinyin": "binzhoushi",
+    "name": "滨州市"
+  },
+  {
+    "pinyin": "hezeshi",
+    "name": "菏泽市"
+  },
+  {
+    "pinyin": "zhejiangsheng",
+    "name": "浙江省"
+  },
+  {
+    "pinyin": "hangzhoushi",
+    "name": "杭州市"
+  },
+  {
+    "pinyin": "ningboshi",
+    "name": "宁波市"
+  },
+  {
+    "pinyin": "wenzhoushi",
+    "name": "温州市"
+  },
+  {
+    "pinyin": "jiaxingshi",
+    "name": "嘉兴市"
+  },
+  {
+    "pinyin": "huzhoushi",
+    "name": "湖州市"
+  },
+  {
+    "pinyin": "shaoxingshi",
+    "name": "绍兴市"
+  },
+  {
+    "pinyin": "jinhuashi",
+    "name": "金华市"
+  },
+  {
+    "pinyin": "quzhoushi",
+    "name": "衢州市"
+  },
+  {
+    "pinyin": "zhoushanshi",
+    "name": "舟山市"
+  },
+  {
+    "pinyin": "tai2zhoushi",
+    "name": "台州市"
+  },
+  {
+    "pinyin": "lishuishi",
+    "name": "丽水市"
+  },
+  {
+    "pinyin": "tianjinshi",
+    "name": "天津市"
+  },
+  {
+    "pinyin": "xianggangtebiexingzhengqu",
+    "name": "香港特别行政区"
+  },
+  {
+    "pinyin": "jiangxisheng",
+    "name": "江西省"
+  },
+  {
+    "pinyin": "nanchangshi",
+    "name": "南昌市"
+  },
+  {
+    "pinyin": "jingdezhenshi",
+    "name": "景德镇市"
+  },
+  {
+    "pinyin": "pingxiangshi",
+    "name": "萍乡市"
+  },
+  {
+    "pinyin": "jiujiangshi",
+    "name": "九江市"
+  },
+  {
+    "pinyin": "xinyushi",
+    "name": "新余市"
+  },
+  {
+    "pinyin": "yingtanshi",
+    "name": "鹰潭市"
+  },
+  {
+    "pinyin": "ganzhoushi",
+    "name": "赣州市"
+  },
+  {
+    "pinyin": "jianshi",
+    "name": "吉安市"
+  },
+  {
+    "pinyin": "fu3zhoushi",
+    "name": "抚州市"
+  },
+  {
+    "pinyin": "shangraoshi",
+    "name": "上饶市"
+  },
+  {
+    "pinyin": "yi1chunshi",
+    "name": "宜春市"
+  },
+  {
+    "pinyin": "shan1xisheng",
+    "name": "山西省"
+  },
+  {
+    "pinyin": "taiyuanshi",
+    "name": "太原市"
+  },
+  {
+    "pinyin": "datongshi",
+    "name": "大同市"
+  },
+  {
+    "pinyin": "yangquanshi",
+    "name": "阳泉市"
+  },
+  {
+    "pinyin": "changzhishi",
+    "name": "长治市"
+  },
+  {
+    "pinyin": "jinchengshi",
+    "name": "晋城市"
+  },
+  {
+    "pinyin": "shuozhoushi",
+    "name": "朔州市"
+  },
+  {
+    "pinyin": "jinzhongshi",
+    "name": "晋中市"
+  },
+  {
+    "pinyin": "yunchengshi",
+    "name": "运城市"
+  },
+  {
+    "pinyin": "xinzhoushi",
+    "name": "忻州市"
+  },
+  {
+    "pinyin": "linfenshi",
+    "name": "临汾市"
+  },
+  {
+    "pinyin": "lvliangshi",
+    "name": "吕梁市"
+  },
+  {
+    "pinyin": "heilongjiangsheng",
+    "name": "黑龙江省"
+  },
+  {
+    "pinyin": "haerbinshi",
+    "name": "哈尔滨市"
+  },
+  {
+    "pinyin": "qiqihaershi",
+    "name": "齐齐哈尔市"
+  },
+  {
+    "pinyin": "jixishi",
+    "name": "鸡西市"
+  },
+  {
+    "pinyin": "hegangshi",
+    "name": "鹤岗市"
+  },
+  {
+    "pinyin": "shuangyashanshi",
+    "name": "双鸭山市"
+  },
+  {
+    "pinyin": "daqingshi",
+    "name": "大庆市"
+  },
+  {
+    "pinyin": "jiamusishi",
+    "name": "佳木斯市"
+  },
+  {
+    "pinyin": "qitaiheshi",
+    "name": "七台河市"
+  },
+  {
+    "pinyin": "mudanjiangshi",
+    "name": "牡丹江市"
+  },
+  {
+    "pinyin": "heiheshi",
+    "name": "黑河市"
+  },
+  {
+    "pinyin": "suihuashi",
+    "name": "绥化市"
+  },
+  {
+    "pinyin": "daxinganlingdiqu",
+    "name": "大兴安岭地区"
+  },
+  {
+    "pinyin": "yi2chunshi",
+    "name": "伊春市"
+  },
+  {
+    "pinyin": "henansheng",
+    "name": "河南省"
+  },
+  {
+    "pinyin": "zhengzhoushi",
+    "name": "郑州市"
+  },
+  {
+    "pinyin": "kaifengshi",
+    "name": "开封市"
+  },
+  {
+    "pinyin": "luoyangshi",
+    "name": "洛阳市"
+  },
+  {
+    "pinyin": "pingdingshanshi",
+    "name": "平顶山市"
+  },
+  {
+    "pinyin": "jiaozuoshi",
+    "name": "焦作市"
+  },
+  {
+    "pinyin": "hebishi",
+    "name": "鹤壁市"
+  },
+  {
+    "pinyin": "xinxiangshi",
+    "name": "新乡市"
+  },
+  {
+    "pinyin": "anyangshi",
+    "name": "安阳市"
+  },
+  {
+    "pinyin": "puyangshi",
+    "name": "濮阳市"
+  },
+  {
+    "pinyin": "xuchangshi",
+    "name": "许昌市"
+  },
+  {
+    "pinyin": "luoheshi",
+    "name": "漯河市"
+  },
+  {
+    "pinyin": "sanmenxiashi",
+    "name": "三门峡市"
+  },
+  {
+    "pinyin": "nanyangshi",
+    "name": "南阳市"
+  },
+  {
+    "pinyin": "shangqiushi",
+    "name": "商丘市"
+  },
+  {
+    "pinyin": "xinyangshi",
+    "name": "信阳市"
+  },
+  {
+    "pinyin": "zhoukoushi",
+    "name": "周口市"
+  },
+  {
+    "pinyin": "zhumadianshi",
+    "name": "驻马店市"
+  },
+  {
+    "pinyin": "jiyuanshi",
+    "name": "济源市"
+  },
+  {
+    "pinyin": "guangdongsheng",
+    "name": "广东省"
+  },
+  {
+    "pinyin": "guangzhoushi",
+    "name": "广州市"
+  },
+  {
+    "pinyin": "shenzhenshi",
+    "name": "深圳市"
+  },
+  {
+    "pinyin": "zhuhaishi",
+    "name": "珠海市"
+  },
+  {
+    "pinyin": "shantoushi",
+    "name": "汕头市"
+  },
+  {
+    "pinyin": "shaoguanshi",
+    "name": "韶关市"
+  },
+  {
+    "pinyin": "jiangmenshi",
+    "name": "江门市"
+  },
+  {
+    "pinyin": "zhanjiangshi",
+    "name": "湛江市"
+  },
+  {
+    "pinyin": "maomingshi",
+    "name": "茂名市"
+  },
+  {
+    "pinyin": "zhaoqingshi",
+    "name": "肇庆市"
+  },
+  {
+    "pinyin": "huizhoushi",
+    "name": "惠州市"
+  },
+  {
+    "pinyin": "meizhoushi",
+    "name": "梅州市"
+  },
+  {
+    "pinyin": "shanweishi",
+    "name": "汕尾市"
+  },
+  {
+    "pinyin": "heyuanshi",
+    "name": "河源市"
+  },
+  {
+    "pinyin": "yangjiangshi",
+    "name": "阳江市"
+  },
+  {
+    "pinyin": "qingyuanshi",
+    "name": "清远市"
+  },
+  {
+    "pinyin": "dongguanshi",
+    "name": "东莞市"
+  },
+  {
+    "pinyin": "zhongshanshi",
+    "name": "中山市"
+  },
+  {
+    "pinyin": "chaozhoushi",
+    "name": "潮州市"
+  },
+  {
+    "pinyin": "jieyangshi",
+    "name": "揭阳市"
+  },
+  {
+    "pinyin": "yunfushi",
+    "name": "云浮市"
+  },
+  {
+    "pinyin": "foshanshi",
+    "name": "佛山市"
+  },
+  {
+    "pinyin": "xinjiangweiwuerzizhiqu",
+    "name": "新疆维吾尔自治区"
+  },
+  {
+    "pinyin": "wulumuqishi",
+    "name": "乌鲁木齐市"
+  },
+  {
+    "pinyin": "kelamayishi",
+    "name": "克拉玛依市"
+  },
+  {
+    "pinyin": "tulufandiqu",
+    "name": "吐鲁番地区"
+  },
+  {
+    "pinyin": "hamidiqu",
+    "name": "哈密地区"
+  },
+  {
+    "pinyin": "changjihuizuzizhizhou",
+    "name": "昌吉回族自治州"
+  },
+  {
+    "pinyin": "hetiandiqu",
+    "name": "和田地区"
+  },
+  {
+    "pinyin": "akesudiqu",
+    "name": "阿克苏地区"
+  },
+  {
+    "pinyin": "kashidiqu",
+    "name": "喀什地区"
+  },
+  {
+    "pinyin": "kezilesukeerkezizizhizhou",
+    "name": "克孜勒苏柯尔克孜自治州"
+  },
+  {
+    "pinyin": "bayinguolengmengguzizhizhou",
+    "name": "巴音郭楞蒙古自治州"
+  },
+  {
+    "pinyin": "boertalamengguzizhizhou",
+    "name": "博尔塔拉蒙古自治州"
+  },
+  {
+    "pinyin": "yilihasakezizhizhou",
+    "name": "伊犁哈萨克自治州"
+  },
+  {
+    "pinyin": "tachengdiqu",
+    "name": "塔城地区"
+  },
+  {
+    "pinyin": "aletaidiqu",
+    "name": "阿勒泰地区"
+  },
+  {
+    "pinyin": "shihezishi",
+    "name": "石河子市"
+  },
+  {
+    "pinyin": "alaershi",
+    "name": "阿拉尔市"
+  },
+  {
+    "pinyin": "tumushukeshi",
+    "name": "图木舒克市"
+  },
+  {
+    "pinyin": "wujiaqushi",
+    "name": "五家渠市"
+  },
+  {
+    "pinyin": "xizangzizhiqu",
+    "name": "西藏自治区"
+  },
+  {
+    "pinyin": "lasashi",
+    "name": "拉萨市"
+  },
+  {
+    "pinyin": "changdudiqu",
+    "name": "昌都市"
+  },
+  {
+    "pinyin": "shannandiqu",
+    "name": "山南地区"
+  },
+  {
+    "pinyin": "rikazediqu",
+    "name": "日喀则市"
+  },
+  {
+    "pinyin": "naqudiqu",
+    "name": "那曲地区"
+  },
+  {
+    "pinyin": "alidiqu",
+    "name": "阿里地区"
+  },
+  {
+    "pinyin": "linzhidiqu",
+    "name": "林芝地区"
+  },
+  {
+    "pinyin": "hubeisheng",
+    "name": "湖北省"
+  },
+  {
+    "pinyin": "wuhanshi",
+    "name": "武汉市"
+  },
+  {
+    "pinyin": "huangshishi",
+    "name": "黄石市"
+  },
+  {
+    "pinyin": "shiyanshi",
+    "name": "十堰市"
+  },
+  {
+    "pinyin": "jingzhoushi",
+    "name": "荆州市"
+  },
+  {
+    "pinyin": "yichangshi",
+    "name": "宜昌市"
+  },
+  {
+    "pinyin": "jingmenshi",
+    "name": "荆门市"
+  },
+  {
+    "pinyin": "ezhoushi",
+    "name": "鄂州市"
+  },
+  {
+    "pinyin": "xiaoganshi",
+    "name": "孝感市"
+  },
+  {
+    "pinyin": "huanggangshi",
+    "name": "黄冈市"
+  },
+  {
+    "pinyin": "xianningshi",
+    "name": "咸宁市"
+  },
+  {
+    "pinyin": "suizhoushi",
+    "name": "随州市"
+  },
+  {
+    "pinyin": "enshitujiazumiaozuzizhizhou",
+    "name": "恩施土家族苗族自治州"
+  },
+  {
+    "pinyin": "xiantaoshi",
+    "name": "仙桃市"
+  },
+  {
+    "pinyin": "qianjiangshi",
+    "name": "潜江市"
+  },
+  {
+    "pinyin": "tianmenshi",
+    "name": "天门市"
+  },
+  {
+    "pinyin": "shennongjialinqu",
+    "name": "神农架林区"
+  },
+  {
+    "pinyin": "xiangyangshi",
+    "name": "襄阳市"
+  },
+  {
+    "pinyin": "liaoningsheng",
+    "name": "辽宁省"
+  },
+  {
+    "pinyin": "shenyangshi",
+    "name": "沈阳市"
+  },
+  {
+    "pinyin": "dalianshi",
+    "name": "大连市"
+  },
+  {
+    "pinyin": "anshanshi",
+    "name": "鞍山市"
+  },
+  {
+    "pinyin": "fushunshi",
+    "name": "抚顺市"
+  },
+  {
+    "pinyin": "benxishi",
+    "name": "本溪市"
+  },
+  {
+    "pinyin": "dandongshi",
+    "name": "丹东市"
+  },
+  {
+    "pinyin": "jinzhoushi",
+    "name": "锦州市"
+  },
+  {
+    "pinyin": "yingkoushi",
+    "name": "营口市"
+  },
+  {
+    "pinyin": "fuxinshi",
+    "name": "阜新市"
+  },
+  {
+    "pinyin": "liaoyangshi",
+    "name": "辽阳市"
+  },
+  {
+    "pinyin": "panjinshi",
+    "name": "盘锦市"
+  },
+  {
+    "pinyin": "tielingshi",
+    "name": "铁岭市"
+  },
+  {
+    "pinyin": "chaoyangshi",
+    "name": "朝阳市"
+  },
+  {
+    "pinyin": "huludaoshi",
+    "name": "葫芦岛市"
+  },
+  {
+    "pinyin": "jilinsheng",
+    "name": "吉林省"
+  },
+  {
+    "pinyin": "changchunshi",
+    "name": "长春市"
+  },
+  {
+    "pinyin": "jilinshi",
+    "name": "吉林市"
+  },
+  {
+    "pinyin": "sipingshi",
+    "name": "四平市"
+  },
+  {
+    "pinyin": "liaoyuanshi",
+    "name": "辽源市"
+  },
+  {
+    "pinyin": "tonghuashi",
+    "name": "通化市"
+  },
+  {
+    "pinyin": "baishanshi",
+    "name": "白山市"
+  },
+  {
+    "pinyin": "songyuanshi",
+    "name": "松原市"
+  },
+  {
+    "pinyin": "baichengshi",
+    "name": "白城市"
+  },
+  {
+    "pinyin": "yanbianchaoxianzuzizhizhou",
+    "name": "延边朝鲜族自治州"
+  },
+  {
+    "pinyin": "jiangsusheng",
+    "name": "江苏省"
+  },
+  {
+    "pinyin": "nanjingshi",
+    "name": "南京市"
+  },
+  {
+    "pinyin": "wuxishi",
+    "name": "无锡市"
+  },
+  {
+    "pinyin": "xuzhoushi",
+    "name": "徐州市"
+  },
+  {
+    "pinyin": "changzhoushi",
+    "name": "常州市"
+  },
+  {
+    "pinyin": "su1zhoushi",
+    "name": "苏州市"
+  },
+  {
+    "pinyin": "nantongshi",
+    "name": "南通市"
+  },
+  {
+    "pinyin": "lianyungangshi",
+    "name": "连云港市"
+  },
+  {
+    "pinyin": "huaianshi",
+    "name": "淮安市"
+  },
+  {
+    "pinyin": "yanchengshi",
+    "name": "盐城市"
+  },
+  {
+    "pinyin": "yangzhoushi",
+    "name": "扬州市"
+  },
+  {
+    "pinyin": "zhenjiangshi",
+    "name": "镇江市"
+  },
+  {
+    "pinyin": "tai3zhoushi",
+    "name": "泰州市"
+  },
+  {
+    "pinyin": "suqianshi",
+    "name": "宿迁市"
+  },
+  {
+    "pinyin": "beijingshi",
+    "name": "北京市"
+  },
+  {
+    "pinyin": "guangxizhuangzuzizhiqu",
+    "name": "广西壮族自治区"
+  },
+  {
+    "pinyin": "nanningshi",
+    "name": "南宁市"
+  },
+  {
+    "pinyin": "liuzhoushi",
+    "name": "柳州市"
+  },
+  {
+    "pinyin": "guilinshi",
+    "name": "桂林市"
+  },
+  {
+    "pinyin": "wuzhoushi",
+    "name": "梧州市"
+  },
+  {
+    "pinyin": "beihaishi",
+    "name": "北海市"
+  },
+  {
+    "pinyin": "fangchenggangshi",
+    "name": "防城港市"
+  },
+  {
+    "pinyin": "qinzhoushi",
+    "name": "钦州市"
+  },
+  {
+    "pinyin": "guigangshi",
+    "name": "贵港市"
+  },
+  {
+    "pinyin": "yu4linshi",
+    "name": "玉林市"
+  },
+  {
+    "pinyin": "baiseshi",
+    "name": "百色市"
+  },
+  {
+    "pinyin": "hezhoushi",
+    "name": "贺州市"
+  },
+  {
+    "pinyin": "hechishi",
+    "name": "河池市"
+  },
+  {
+    "pinyin": "laibinshi",
+    "name": "来宾市"
+  },
+  {
+    "pinyin": "chongzuoshi",
+    "name": "崇左市"
+  },
+  {
+    "pinyin": "neimengguzizhiqu",
+    "name": "内蒙古自治区"
+  },
+  {
+    "pinyin": "huhehaoteshi",
+    "name": "呼和浩特市"
+  },
+  {
+    "pinyin": "baotoushi",
+    "name": "包头市"
+  },
+  {
+    "pinyin": "wuhaishi",
+    "name": "乌海市"
+  },
+  {
+    "pinyin": "chifengshi",
+    "name": "赤峰市"
+  },
+  {
+    "pinyin": "tongliaoshi",
+    "name": "通辽市"
+  },
+  {
+    "pinyin": "eerduosishi",
+    "name": "鄂尔多斯市"
+  },
+  {
+    "pinyin": "hulunbeiershi",
+    "name": "呼伦贝尔市"
+  },
+  {
+    "pinyin": "bayannaoershi",
+    "name": "巴彦淖尔市"
+  },
+  {
+    "pinyin": "wulanchabushi",
+    "name": "乌兰察布市"
+  },
+  {
+    "pinyin": "xinganmeng",
+    "name": "兴安盟"
+  },
+  {
+    "pinyin": "xilinguolemeng",
+    "name": "锡林郭勒盟"
+  },
+  {
+    "pinyin": "alashanmeng",
+    "name": "阿拉善盟"
+  },
+  {
+    "pinyin": "fujiansheng",
+    "name": "福建省"
+  },
+  {
+    "pinyin": "fu2zhoushi",
+    "name": "福州市"
+  },
+  {
+    "pinyin": "xiamenshi",
+    "name": "厦门市"
+  },
+  {
+    "pinyin": "putianshi",
+    "name": "莆田市"
+  },
+  {
+    "pinyin": "sanmingshi",
+    "name": "三明市"
+  },
+  {
+    "pinyin": "quanzhoushi",
+    "name": "泉州市"
+  },
+  {
+    "pinyin": "zhangzhoushi",
+    "name": "漳州市"
+  },
+  {
+    "pinyin": "nanpingshi",
+    "name": "南平市"
+  },
+  {
+    "pinyin": "longyanshi",
+    "name": "龙岩市"
+  },
+  {
+    "pinyin": "ningdeshi",
+    "name": "宁德市"
+  },
+  {
+    "pinyin": "chongqingshi",
+    "name": "重庆市"
+  },
+  {
+    "pinyin": "hunansheng",
+    "name": "湖南省"
+  },
+  {
+    "pinyin": "changshashi",
+    "name": "长沙市"
+  },
+  {
+    "pinyin": "zhuzhoushi",
+    "name": "株洲市"
+  },
+  {
+    "pinyin": "xiangtanshi",
+    "name": "湘潭市"
+  },
+  {
+    "pinyin": "hengyangshi",
+    "name": "衡阳市"
+  },
+  {
+    "pinyin": "shaoyangshi",
+    "name": "邵阳市"
+  },
+  {
+    "pinyin": "yueyangshi",
+    "name": "岳阳市"
+  },
+  {
+    "pinyin": "changdeshi",
+    "name": "常德市"
+  },
+  {
+    "pinyin": "zhangjiajieshi",
+    "name": "张家界市"
+  },
+  {
+    "pinyin": "yiyangshi",
+    "name": "益阳市"
+  },
+  {
+    "pinyin": "chenzhoushi",
+    "name": "郴州市"
+  },
+  {
+    "pinyin": "yongzhoushi",
+    "name": "永州市"
+  },
+  {
+    "pinyin": "huaihuashi",
+    "name": "怀化市"
+  },
+  {
+    "pinyin": "loudishi",
+    "name": "娄底市"
+  },
+  {
+    "pinyin": "xiangxitujiazumiaozuzizhizhou",
+    "name": "湘西土家族苗族自治州"
+  },
+  {
+    "pinyin": "anhuisheng",
+    "name": "安徽省"
+  },
+  {
+    "pinyin": "hefeishi",
+    "name": "合肥市"
+  },
+  {
+    "pinyin": "wuhushi",
+    "name": "芜湖市"
+  },
+  {
+    "pinyin": "huainanshi",
+    "name": "淮南市"
+  },
+  {
+    "pinyin": "maanshanshi",
+    "name": "马鞍山市"
+  },
+  {
+    "pinyin": "huaibeishi",
+    "name": "淮北市"
+  },
+  {
+    "pinyin": "tonglingshi",
+    "name": "铜陵市"
+  },
+  {
+    "pinyin": "anqingshi",
+    "name": "安庆市"
+  },
+  {
+    "pinyin": "huangshanshi",
+    "name": "黄山市"
+  },
+  {
+    "pinyin": "fuyangshi",
+    "name": "阜阳市"
+  },
+  {
+    "pinyin": "su4zhoushi",
+    "name": "宿州市"
+  },
+  {
+    "pinyin": "chuzhoushi",
+    "name": "滁州市"
+  },
+  {
+    "pinyin": "xuanchengshi",
+    "name": "宣城市"
+  },
+  {
+    "pinyin": "chizhoushi",
+    "name": "池州市"
+  },
+  {
+    "pinyin": "bozhoushi",
+    "name": "亳州市"
+  },
+  {
+    "pinyin": "bengbushi",
+    "name": "蚌埠市"
+  },
+  {
+    "pinyin": "luanshi",
+    "name": "六安市"
+  },
+  {
+    "pinyin": "taiwan",
+    "name": "台湾省"
+  },
+  {
+    "pinyin": "shan3xisheng",
+    "name": "陕西省"
+  },
+  {
+    "pinyin": "xianshi",
+    "name": "西安市"
+  },
+  {
+    "pinyin": "tongchuanshi",
+    "name": "铜川市"
+  },
+  {
+    "pinyin": "baojishi",
+    "name": "宝鸡市"
+  },
+  {
+    "pinyin": "xianyangshi",
+    "name": "咸阳市"
+  },
+  {
+    "pinyin": "weinanshi",
+    "name": "渭南市"
+  },
+  {
+    "pinyin": "yananshi",
+    "name": "延安市"
+  },
+  {
+    "pinyin": "hanzhongshi",
+    "name": "汉中市"
+  },
+  {
+    "pinyin": "yu2linshi",
+    "name": "榆林市"
+  },
+  {
+    "pinyin": "ankangshi",
+    "name": "安康市"
+  },
+  {
+    "pinyin": "shangluoshi",
+    "name": "商洛市"
+  },
+  {
+    "pinyin": "gansusheng",
+    "name": "甘肃省"
+  },
+  {
+    "pinyin": "lanzhoushi",
+    "name": "兰州市"
+  },
+  {
+    "pinyin": "jiayuguanshi",
+    "name": "嘉峪关市"
+  },
+  {
+    "pinyin": "jinchangshi",
+    "name": "金昌市"
+  },
+  {
+    "pinyin": "baiyinshi",
+    "name": "白银市"
+  },
+  {
+    "pinyin": "tianshuishi",
+    "name": "天水市"
+  },
+  {
+    "pinyin": "jiuquanshi",
+    "name": "酒泉市"
+  },
+  {
+    "pinyin": "zhangyeshi",
+    "name": "张掖市"
+  },
+  {
+    "pinyin": "wuweishi",
+    "name": "武威市"
+  },
+  {
+    "pinyin": "dingxishi",
+    "name": "定西市"
+  },
+  {
+    "pinyin": "longnanshi",
+    "name": "陇南市"
+  },
+  {
+    "pinyin": "pingliangshi",
+    "name": "平凉市"
+  },
+  {
+    "pinyin": "qingyangshi",
+    "name": "庆阳市"
+  },
+  {
+    "pinyin": "linxiahuizuzizhizhou",
+    "name": "临夏回族自治州"
+  },
+  {
+    "pinyin": "gannanzangzuzizhizhou",
+    "name": "甘南藏族自治州"
+  },
+  {
+    "pinyin": "qinghaisheng",
+    "name": "青海省"
+  },
+  {
+    "pinyin": "xiningshi",
+    "name": "西宁市"
+  },
+  {
+    "pinyin": "haibeizangzuzizhizhou",
+    "name": "海北藏族自治州"
+  },
+  {
+    "pinyin": "huangnanzangzuzizhizhou",
+    "name": "黄南藏族自治州"
+  },
+  {
+    "pinyin": "hainanzangzuzizhizhou",
+    "name": "海南藏族自治州"
+  },
+  {
+    "pinyin": "guoluozangzuzizhizhou",
+    "name": "果洛藏族自治州"
+  },
+  {
+    "pinyin": "yushuzangzuzizhizhou",
+    "name": "玉树藏族自治州"
+  },
+  {
+    "pinyin": "haiximengguzuzangzuzizhizhou",
+    "name": "海西蒙古族藏族自治州"
+  },
+  {
+    "pinyin": "haidongshi",
+    "name": "海东市"
+  },
+  {
+    "pinyin": "hebeisheng",
+    "name": "河北省"
+  },
+  {
+    "pinyin": "shijiazhuangshi",
+    "name": "石家庄市"
+  },
+  {
+    "pinyin": "tangshanshi",
+    "name": "唐山市"
+  },
+  {
+    "pinyin": "qinhuangdaoshi",
+    "name": "秦皇岛市"
+  },
+  {
+    "pinyin": "handanshi",
+    "name": "邯郸市"
+  },
+  {
+    "pinyin": "xingtaishi",
+    "name": "邢台市"
+  },
+  {
+    "pinyin": "baodingshi",
+    "name": "保定市"
+  },
+  {
+    "pinyin": "zhangjiakoushi",
+    "name": "张家口市"
+  },
+  {
+    "pinyin": "chengdeshi",
+    "name": "承德市"
+  },
+  {
+    "pinyin": "cangzhoushi",
+    "name": "沧州市"
+  },
+  {
+    "pinyin": "langfangshi",
+    "name": "廊坊市"
+  },
+  {
+    "pinyin": "hengshuishi",
+    "name": "衡水市"
+  },
+  {
+    "pinyin": "aomentebiexingzhengqu",
+    "name": "澳门特别行政区"
+  },
+  {
+    "pinyin": "yunnansheng",
+    "name": "云南省"
+  },
+  {
+    "pinyin": "kunmingshi",
+    "name": "昆明市"
+  },
+  {
+    "pinyin": "qujingshi",
+    "name": "曲靖市"
+  },
+  {
+    "pinyin": "yuxishi",
+    "name": "玉溪市"
+  },
+  {
+    "pinyin": "baoshanshi",
+    "name": "保山市"
+  },
+  {
+    "pinyin": "zhaotongshi",
+    "name": "昭通市"
+  },
+  {
+    "pinyin": "lijiangshi",
+    "name": "丽江市"
+  },
+  {
+    "pinyin": "puershi",
+    "name": "普洱市"
+  },
+  {
+    "pinyin": "lincangshi",
+    "name": "临沧市"
+  },
+  {
+    "pinyin": "wenshanzhuangzumiaozuzizhizhou",
+    "name": "文山壮族苗族自治州"
+  },
+  {
+    "pinyin": "honghehanizuyizuzizhizhou",
+    "name": "红河哈尼族彝族自治州"
+  },
+  {
+    "pinyin": "xishuangbannadaizuzizhizhou",
+    "name": "西双版纳傣族自治州"
+  },
+  {
+    "pinyin": "chuxiongyizuzizhizhou",
+    "name": "楚雄彝族自治州"
+  },
+  {
+    "pinyin": "dalibaizuzizhizhou",
+    "name": "大理白族自治州"
+  },
+  {
+    "pinyin": "dehongdaizujingpozuzizhizhou",
+    "name": "德宏傣族景颇族自治州"
+  },
+  {
+    "pinyin": "nujianglisuzuzizhizhou",
+    "name": "怒江傈僳族自治州"
+  },
+  {
+    "pinyin": "diqingzangzuzizhizhou",
+    "name": "迪庆藏族自治州"
+  },
+  {
+    "pinyin": "sichuansheng",
+    "name": "四川省"
+  },
+  {
+    "pinyin": "chengdushi",
+    "name": "成都市"
+  },
+  {
+    "pinyin": "mianyangshi",
+    "name": "绵阳市"
+  },
+  {
+    "pinyin": "zigongshi",
+    "name": "自贡市"
+  },
+  {
+    "pinyin": "panzhihuashi",
+    "name": "攀枝花市"
+  },
+  {
+    "pinyin": "luzhoushi",
+    "name": "泸州市"
+  },
+  {
+    "pinyin": "deyangshi",
+    "name": "德阳市"
+  },
+  {
+    "pinyin": "guangyuanshi",
+    "name": "广元市"
+  },
+  {
+    "pinyin": "suiningshi",
+    "name": "遂宁市"
+  },
+  {
+    "pinyin": "neijiangshi",
+    "name": "内江市"
+  },
+  {
+    "pinyin": "leshanshi",
+    "name": "乐山市"
+  },
+  {
+    "pinyin": "nanchongshi",
+    "name": "南充市"
+  },
+  {
+    "pinyin": "yibinshi",
+    "name": "宜宾市"
+  },
+  {
+    "pinyin": "guanganshi",
+    "name": "广安市"
+  },
+  {
+    "pinyin": "dazhoushi",
+    "name": "达州市"
+  },
+  {
+    "pinyin": "meishanshi",
+    "name": "眉山市"
+  },
+  {
+    "pinyin": "yaanshi",
+    "name": "雅安市"
+  },
+  {
+    "pinyin": "bazhongshi",
+    "name": "巴中市"
+  },
+  {
+    "pinyin": "ziyangshi",
+    "name": "资阳市"
+  },
+  {
+    "pinyin": "abazangzuqiangzuzizhizhou",
+    "name": "阿坝藏族羌族自治州"
+  },
+  {
+    "pinyin": "ganzizangzuzizhizhou",
+    "name": "甘孜藏族自治州"
+  },
+  {
+    "pinyin": "liangshanyizuzizhizhou",
+    "name": "凉山彝族自治州"
+  },
+  {
+    "pinyin": "china2",
+    "name": "全国概略图"
+  },
+  {
+    "pinyin": "ningxiahuizuzizhiqu",
+    "name": "宁夏回族自治区"
+  },
+  {
+    "pinyin": "yinchuanshi",
+    "name": "银川市"
+  },
+  {
+    "pinyin": "shizuishanshi",
+    "name": "石嘴山市"
+  },
+  {
+    "pinyin": "wuzhongshi",
+    "name": "吴忠市"
+  },
+  {
+    "pinyin": "guyuanshi",
+    "name": "固原市"
+  },
+  {
+    "pinyin": "zhongweishi",
+    "name": "中卫市"
+  },
+  {
+    "pinyin": "shanghaishi",
+    "name": "上海市"
+  },
+  {
+    "pinyin": "hainansheng",
+    "name": "海南省"
+  },
+  {
+    "pinyin": "haikoushi",
+    "name": "海口市"
+  },
+  {
+    "pinyin": "sanyashi",
+    "name": "三亚市"
+  },
+  {
+    "pinyin": "wenchangshi",
+    "name": "文昌市"
+  },
+  {
+    "pinyin": "qionghaishi",
+    "name": "琼海市"
+  },
+  {
+    "pinyin": "wanningshi",
+    "name": "万宁市"
+  },
+  {
+    "pinyin": "wuzhishanshi",
+    "name": "五指山市"
+  },
+  {
+    "pinyin": "dongfangshi",
+    "name": "东方市"
+  },
+  {
+    "pinyin": "danzhoushi",
+    "name": "儋州市"
+  },
+  {
+    "pinyin": "baishalizuzizhixian",
+    "name": "白沙黎族自治县"
+  },
+  {
+    "pinyin": "baotinglizumiaozuzizhixian",
+    "name": "保亭黎族苗族自治县"
+  },
+  {
+    "pinyin": "changjianglizuzizhixian",
+    "name": "昌江黎族自治县"
+  },
+  {
+    "pinyin": "chengmaixian",
+    "name": "澄迈县"
+  },
+  {
+    "pinyin": "dinganxian",
+    "name": "定安县"
+  },
+  {
+    "pinyin": "ledonglizuzizhixian",
+    "name": "乐东黎族自治县"
+  },
+  {
+    "pinyin": "lingaoxian",
+    "name": "临高县"
+  },
+  {
+    "pinyin": "lingshuilizuzizhixian",
+    "name": "陵水黎族自治县"
+  },
+  {
+    "pinyin": "qiongzhonglizumiaozuzizhixian",
+    "name": "琼中黎族苗族自治县"
+  },
+  {
+    "pinyin": "tunchangxian",
+    "name": "屯昌县"
+  },
+  {
+    "pinyin": "sanshashi",
+    "name": "三沙市"
+  }
+]

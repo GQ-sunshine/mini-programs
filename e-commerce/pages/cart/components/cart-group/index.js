@@ -1,7 +1,7 @@
 import Toast from 'tdesign-miniprogram/toast/index';
 import i18n from '../../../../i18n/index';
 
-const shortageImg = 'https://cdn-we-retail.ym.tencent.com/miniapp/cart/shortage.png';
+const shortageImg = 'https://miniprogram.tcsas-superapp.com/miniapp/cart/shortage.png';
 const app = getApp();
 
 Component({

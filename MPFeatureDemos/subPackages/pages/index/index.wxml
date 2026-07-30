@@ -1,0 +1,7 @@
+<scroll-view class="scroll-area" type="list" scroll-y>
+  <view class="intro">This is the homepage in the main package. Click the button to enter the subPackage.</view>
+  <navigator url="/subPackage/pages/index/index">
+    <image class="intro-img" src="../../assets/test1.png"></image>
+    <button>Enter subPackage</button>
+  </navigator>
+</scroll-view>

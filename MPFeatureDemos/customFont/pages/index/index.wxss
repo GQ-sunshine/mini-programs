@@ -1,0 +1,17 @@
+  .font-container {
+      margin-top: 50rpx;
+  }
+  
+  .custom-text1 {
+    font-family: 'OnlineCustomFont';
+    color: red;
+  }
+
+  .custom-text2 {
+    font-family: 'Base64CustomFont';
+    color: green;
+  }
+
+  .custom-text3 {
+    font-family: 'APICustomFont';
+  }

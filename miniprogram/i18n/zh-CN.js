@@ -19,7 +19,7 @@ export default {
   more: '更多',
   paragraph2: '以下将演示小程序接口能力，具体属性参数详见',
   OpenInterface: '开放接口',
-  'WeChat login': '微信登录',
+  'login': '登录',
   'Initiate payment': '发起支付',
   'Data report': '数据上报',
   'Picture sharing': '图片分享',
@@ -200,6 +200,7 @@ export default {
   button12: '不可点击的按钮',
   button13: '临时会话',
   button14: '用于演示',
+  button15: '获取用户邮箱地址',
   checkboxComponent1: '默认样式',
   checkboxComponent2: '选中',
   checkboxComponent3: '未选中',
@@ -381,10 +382,7 @@ export default {
   'choose-invoice8': '银行账号',
   'choose-invoice9': '获取发票抬头',
   login0: '已登录',
-  login1:
-    '每个微信号中仅需登录 1 次，后续每次进入页面即可根据微信 id 自动拉取用户信息',
-  login2: '每个微信号中仅需登录一次',
-  login3: '微信登录',
+  login3: '登录',
   'request-payment0': '自定义API发起支付',
   'request-payment1': '支付金额',
   'request-payment2': '实际接口应用中可自定义金额',
@@ -1531,5 +1529,11 @@ export default {
   vtabs12: '本课程共四节，将分阶段为开发者展示如何开通流量主功能、如何接入广告组件、不同类型小程序接入的建议。',
   vtabs13: '高校大赛',
   vtabs14: '2020中国高校计算机大赛',
-  vtabs15: '微信小程序应用开发赛'
+  vtabs15: '微信小程序应用开发赛',
+  '昵称': '昵称',
+  '请输入昵称': '请输入昵称',
+  'Page interaction': '页面交互',
+  'Simulated login': '模拟登录',
+  'Simulated payment': '模拟支付',
+  'Simulated enter Superapp page': '模拟进入Superapp页面'
 };

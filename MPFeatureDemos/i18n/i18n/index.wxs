@@ -1,0 +1,36 @@
+/**
+ * Extracts placeholders from a string
+ * @param {string} str - The string containing placeholders
+ * @param {Array} result - Array to store extracted results, defaults to empty array
+ * @param {RegExp} regex - Regular expression to match placeholders, defaults to {key} format
+ * @returns {Array} Returns an array containing all placeholders and their contents in format [[full placeholder, placeholder content], ...]
+ */
+function extractPlaceholders(str, result = [], regex = getRegExp('{\s*([^}]+)\s*}', 'g')) {
+    const match = regex.exec(str);
+    if (match) {
+        result.push([match[0], match[1]])
+        return extractPlaceholders(str.slice(match.index + match[0].length), result, regex);
+    }
+    return result;
+};
+
+/**
+ * Internationalization translation function
+ * @param {string} str - The string to be translated, may contain {key} format placeholders
+ * @param {Object} options - Object containing placeholder replacement values
+ * @returns {string} Returns the final string with placeholders replaced
+ */
+function t(str, options) {
+    const placeholders = extractPlaceholders(str);
+    let langStr = str;
+    if (options) {
+        placeholders.forEach(function (arg) {
+            const v = arg[0];
+            const k = arg[1];
+            langStr = langStr.replace(v, options[k]);
+        })
+    }
+    return langStr;
+}
+
+module.exports = t

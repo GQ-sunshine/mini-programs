@@ -1,0 +1,20 @@
+<import src="../../../../common/head.wxml" />
+<import src="../../../../common/foot.wxml" />
+<import src="../../../../common/foot_en.wxml" />
+
+<view class="container page">
+  <template is="head" data="{{title: 'Native page interaction'}}"/>
+
+  <view class="page-body">
+    <view class="btn-area">
+      <button type="default" bindtap="mockLogin" style="margin-top: 20px;">{{loginText}}</button>
+      <view style="margin-top: 20px;">{{loginResult}}</view>
+      <button type="default" bindtap="mockPayOrder" style="margin-top: 20px;">{{payText}}</button>
+      <view style="margin-top: 20px;">{{payResult}}</view>
+      <button type="default" bindtap="mockRunMainAppPage" style="margin-top: 20px;">{{mainAppText}}</button>
+    </view>
+  </view>
+
+  <template is="foot" wx:if="{{lang==='zh_CN'}}" />
+  <template is="foot_en" wx:else />
+</view>

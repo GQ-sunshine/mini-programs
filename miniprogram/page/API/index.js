@@ -23,6 +23,9 @@ Page({
           name: i18n['copy Link'],
           url: 'copy-url/copy-url'
         }, {
+          name: i18n['login'],
+          url: 'login/login'
+        }, {
           name: i18n['Forward'],
           url: 'share/share'
         }, {
@@ -105,6 +108,9 @@ Page({
       pages: [{
         name: i18n['Interaction'],
         url: 'toast/toast'
+      }, {
+        name: i18n['Page interaction'],
+        url: 'native-page/native-page'
       }, {
         name: i18n['Navigation Bar'],
         url: 'navigation-bar/navigation-bar'

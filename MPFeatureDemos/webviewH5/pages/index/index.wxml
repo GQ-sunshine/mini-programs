@@ -1,0 +1,4 @@
+<view class="container">
+  <button class="navigate-button" bindtap="navigateToOnlineH5">Online H5</button>
+  <button class="navigate-button" bindtap="navigateToOfflineH5">Offline H5</button>
+</view>

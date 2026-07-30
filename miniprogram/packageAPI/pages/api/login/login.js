@@ -26,7 +26,8 @@ Page({
     })
   },
   data: {
-    theme: 'light'
+    theme: 'light',
+    code: ''
   },
   login() {
     const that = this
@@ -35,7 +36,8 @@ Page({
         console.log('======res', res)
         app.globalData.hasLogin = true
         that.setData({
-          hasLogin: true
+          hasLogin: true,
+          code: res.code
         })
       },
       fail: err => {

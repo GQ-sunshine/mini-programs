@@ -25,7 +25,13 @@ Page {
      border-radius: 50%;
 }
 
+.settingIcon {
+     width: 40rpx;
+     height: 40rpx;
+}
+
 .userTitle {
+     flex: 1;
      margin-left: 16rpx;
      font-size: 30rpx;
      color: #333;

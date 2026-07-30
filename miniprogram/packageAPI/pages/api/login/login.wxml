@@ -9,10 +9,9 @@
     <view class="page-section">
       <block wx:if="{{hasLogin === true}}">
         <text class="page-body-title">{{t['login0']}}</text>
-        <text class="page-body-text">{{t['login1']}}</text>
+        <text class="page-body-text">Code:{{code}}</text>
       </block>
       <block wx:if="{{hasLogin === false}}">
-        <text class="page-body-text">{{t['login2']}}</text>
         <button class="page-body-button" type="primary" bindtap="login">{{t['login3']}}</button>
       </block>
     </view>

@@ -1,0 +1,15 @@
+<view data-weui-theme="{{theme}}">
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </button>
+  <view class="page-section">
+    <view class="page-section-title">{{t['昵称']}}</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd" style="margin: 30rpx 0" >
+          <input type="nickname" class="weui-input" placeholder="{{t['请输入昵称']}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

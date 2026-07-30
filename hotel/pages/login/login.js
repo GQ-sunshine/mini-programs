@@ -1,5 +1,6 @@
 // pages/login/login.js
 import { i18n } from '../../i18n/lang';
+import Config from '../../utils/configData';
 const app = getApp()
 Page({
 
@@ -9,6 +10,7 @@ Page({
   data: {
     nextBtnBc: '#4a4c5b',
     isLoading: false,
+    isLoadingPhone: false,
     i18n
   },
   onLoad() {
@@ -16,26 +18,29 @@ Page({
       i18n
     })
   },
-  // 登录
-  login: function () {
+  handleLogin: function() {
     this.setData({
       isLoading: true
     })
+    this.login('isLoading')
+  },
+  // 登录
+  login: function (loadingName) {
     wx.login({
       success: (res) => {
         console.log('wx.login success===', res)
         if (res.code) {
           //发起网络请求
           wx.request({
-            url: "https://tcmpp.woyaojianfei.club/getUserInfo",
+            url: `${Config.BASEURL}/getUserInfo`,
             method: "POST",
             data: {
-              appid: "mpvghq4emdne60gv",
+              appid: Config.APPID,
               code: res.code
             },
             success: (res) => {
               this.setData({
-                isLoading: false
+                [loadingName]: false
               })
               console.log('wx.request success===', res)
               const { code = -1, data = {} } = res?.data || {};
@@ -46,9 +51,14 @@ Page({
                     duration: 500
                 })
                 app.globalData.userInfo = {
-                  avatarUrl: '../../res/images/avatar2.png',
+                  ...app.globalData.userInfo,
+                  avatarUrl: data.avatarUrl || '../../res/images/avatar2.png',
+                  account: data.account,
                   nickName: data.userName,
-                  id: data.id
+                  id: data.id,
+                  token: data.token,
+                  phoneNumber: data.phone || app.globalData?.userInfo?.phoneNumber || '',
+                  emailAddress: data.email
                 }
                 setTimeout(() => {
                   wx.navigateBack({
@@ -56,20 +66,22 @@ Page({
                   })
                 }, 500)
               } else {
-                console.log('getUserInfo request fail', res)
+                const msg = res?.data?.data?.msg || '/getUserInfo request fail'
+                const errcode = res?.data?.data?.errcode || code
+                console.log('/getUserInfo request fail', res)
                 wx.showModal({
                   title: i18n['登录失败'],
                   confirmText: i18n['确定'],
-                  content: 'getUserInfo request fail',
+                  content: `/getUserInfo fail:${msg}[code:${errcode}]`,
                   showCancel: false
                 })
               }
             },
             fail: (err) => {
               this.setData({
-                isLoading: false
+                [loadingName]: false
               })
-              console.log('getUserInfo request fail', err)
+              console.log('wx.request fail', err)
               wx.showModal({
                 title: i18n['登录失败'],
                 confirmText: i18n['确定'],
@@ -80,20 +92,20 @@ Page({
           })
         } else {
           this.setData({
-            isLoading: false
+            [loadingName]: false
           })
           console.log('wx.login does not return code', res)
           wx.showModal({
             title: i18n['登录失败'],
             confirmText: i18n['确定'],
-            content: err.errMsg,
+            content: res.errMsg,
             showCancel: false
           })
         }
       },
       fail: (err) => {
         this.setData({
-          isLoading: false
+          [loadingName]: false
         })
         console.log('wx.login fail===', err)
         wx.showModal({
@@ -106,12 +118,76 @@ Page({
     })
   },
   loginQuick() {
-    app.globalData.userInfo = {
-      avatarUrl: '../../res/images/avatar.png',
-      nickName: '185****1111'
-    }
-    wx.navigateBack({
-      delta: 1
+    this.setData({
+      isLoadingPhone: true
     })
-  }
+  },
+  handleGetPhoneNumber(e) {
+    console.log('getPhoneNumber success===', e.detail)
+    const { code, errMsg } = e.detail
+    if (code) {
+        //发起网络请求
+        wx.request({
+          url: `${Config.BASEURL}/getUserPhoneDirect`,
+          method: "POST",
+          data: {
+            appid: Config.APPID,
+            code,
+          },
+          success: (res) => {
+            console.log('getPhoneNumber request success===', res)
+            const { code = -1, data = {}, msg } = res?.data || {};
+            if (code === 200) { // 换取手机号信息成功
+              app.globalData.userInfo = {
+                phoneNumber: data?.phoneNumber,
+                loginQuick: true
+              }
+              this.login('isLoadingPhone')
+            } else {
+              const msg = res?.data?.data?.msg || res?.data || '/getPhoneNumber request fail'
+              const errcode = res?.data?.data?.errcode || code
+              console.log('/getPhoneNumber request fail', res)
+              wx.showModal({
+                title: i18n['获取手机号码失败'],
+                confirmText: i18n['确定'],
+                content: `/getPhoneNumber fail:${msg}[code:${errcode}]`,
+                showCancel: false
+              })
+            }
+          },
+          fail: (err) => {
+            this.setData({
+              isLoadingPhone: false
+            })
+            console.log('wx.request fail', err)
+            wx.showModal({
+              title: 'wx.request fail',
+              confirmText: i18n['确定'],
+              content: err.errMsg,
+              showCancel: false
+            })
+          },
+        })
+      } else {
+        this.setData({
+          isLoadingPhone: false
+        })
+        console.log('getPhoneNumber does not return code', e.detail)
+        wx.showModal({
+          title: 'getPhoneNumber fail',
+          confirmText: i18n['确定'],
+          content: i18n['请确认在APP中已经设置了手机号码'],
+          showCancel: false
+        })
+      }
+    },
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage: function () {
+      return {
+        title: `${i18n['欢迎来到Hotel，立即登录体验奢华住宿']}`,
+        path: '/pages/login/login'
+      }
+    }
 })

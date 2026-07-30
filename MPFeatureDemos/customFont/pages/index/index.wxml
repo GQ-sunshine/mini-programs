@@ -1,0 +1,8 @@
+<view class="container">
+    <view class="custom-text3 font-container">{{text}}</view>
+    <view class="custom-text1 font-container">This is the red online font</view>
+    <view class="custom-text2 font-container">This is the green base64 font</view>
+    <view class="font-container">
+        <button bindtap="loadFontFace">wx.loadFontFace</button>
+    </view>
+</view>

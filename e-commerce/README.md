@@ -38,21 +38,21 @@ TDesign 零售模版示例小程序采用 [TDesign 企业级设计体系小程�
 
 零售行业模版小程序是个经典的单店版电商小程序，涵盖了电商的黄金链路流程，从商品->购物车->结算->订单等。小程序总共包含 28 个完整的页面，涵盖首页，商品详情页，个人中心，售后流程等基础页面。采用 mock 数据进行展示，提供了完整的零售商品展示、交易与售后流程。页面详情：
 
-<img src="https://cdn-we-retail.ym.tencent.com/tsr/tdesign-starter-readmeV1.png" width = "650" height = "900" alt="模版小程序页面详情" align=center />
+<img src="https://miniprogram.tcsas-superapp.com/tsr/tdesign-starter-readmeV1.png" width = "650" height = "900" alt="模版小程序页面详情" align=center />
 
 
 
 主要页面截图如下：
 
 <p align="center">
-    <img alt="example-home" width="200" src="https://cdn-we-retail.ym.tencent.com/tsr/example/v1/home.png" />
-    <img alt="example-sort" width="200" src="https://cdn-we-retail.ym.tencent.com/tsr/example/v2/sort.png" />
-    <img alt="example-cart" width="200" src="https://cdn-we-retail.ym.tencent.com/tsr/example/v1/cart.png" />
-    <img alt="example-user-center" width="200" src="https://cdn-we-retail.ym.tencent.com/tsr/example/v1/user-center.png" />
-    <img alt="example-goods-detail" width="200" src="https://cdn-we-retail.ym.tencent.com/tsr/example/v1/goods-detail.png" />
-    <img alt="example-pay" width="200" src="https://cdn-we-retail.ym.tencent.com/tsr/example/v1/pay.png" />
-    <img alt="example-order" width="200" src="https://cdn-we-retail.ym.tencent.com/tsr/example/v1/order.png" />
-    <img alt="example-order-detail" width="200" src="https://cdn-we-retail.ym.tencent.com/tsr/example/v2/order.png" />
+    <img alt="example-home" width="200" src="https://miniprogram.tcsas-superapp.com/tsr/example/v1/home.png" />
+    <img alt="example-sort" width="200" src="https://miniprogram.tcsas-superapp.com/tsr/example/v2/sort.png" />
+    <img alt="example-cart" width="200" src="https://miniprogram.tcsas-superapp.com/tsr/example/v1/cart.png" />
+    <img alt="example-user-center" width="200" src="https://miniprogram.tcsas-superapp.com/tsr/example/v1/user-center.png" />
+    <img alt="example-goods-detail" width="200" src="https://miniprogram.tcsas-superapp.com/tsr/example/v1/goods-detail.png" />
+    <img alt="example-pay" width="200" src="https://miniprogram.tcsas-superapp.com/tsr/example/v1/pay.png" />
+    <img alt="example-order" width="200" src="https://miniprogram.tcsas-superapp.com/tsr/example/v1/order.png" />
+    <img alt="example-order-detail" width="200" src="https://miniprogram.tcsas-superapp.com/tsr/example/v2/order.png" />
 </p>
 
 

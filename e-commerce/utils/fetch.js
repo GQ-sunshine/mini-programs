@@ -1,27 +1,35 @@
-const USER_LOGIN = "USER_LOGIN";
+const USER_NAME = "USER_NAME";
+const USER_INFO = "USER_INFO";
 const { noServer = false } = getApp().globalData;
 
+const appid = "mp3q0cigfj5e03z8";
+const host = "https://miniprogram.tcsas-superapp.com"; // Don't end with /
 
-const appid = "mpjpb3vq8du7ibcv";
-const host = "https://tcmpp.woyaojianfei.club"; // 不要以/结尾
-
-const login = (id) => {
-  wx.setStorageSync(USER_LOGIN, id);
+const login = (userInfo) => {
+  wx.setStorageSync(USER_NAME, userInfo.userName);
+  wx.setStorageSync(USER_INFO, userInfo);
 };
 
-const getUser = () => {
-  return wx.getStorageSync(USER_LOGIN);
+const getUserName = () => {
+  return wx.getStorageSync(USER_NAME);
+};
+
+const getToken = () => {
+  const { token } = wx.getStorageSync(USER_INFO);
+  return token;
 };
 
 const logout = () => {
-  wx.setStorageSync(USER_LOGIN, "");
+  wx.setStorageSync(USER_NAME, "");
 };
 
 const loginFromServer = function loginFromServer(code, success, fail) {
-  if(noServer){
-    setTimeout(() =>{
-      success?.("offlineUser");  
-    }, 1000)
+  if (noServer) {
+    setTimeout(() => {
+      success?.({
+        userName: "offlineUser",
+      });
+    }, 1000);
     return;
   }
   wx.request({
@@ -35,10 +43,8 @@ const loginFromServer = function loginFromServer(code, success, fail) {
       console.log("mp server resp :", res);
       const { code = -1 } = res?.data || {};
       if (code === 200) {
-        // 换取用户信息成功
-        success?.(res?.data.data.account);
+        success?.(res?.data.data);
       } else {
-        //console.log("静---------------",)
         fail?.(res?.data?.data?.msg || "login error");
       }
     },
@@ -52,27 +58,32 @@ const loginFromServer = function loginFromServer(code, success, fail) {
  * @param {*} body
  * @param {*} id
  */
-const commonPay = function commonPay({ total = 1, body, attach, id, success, fail }) {
-  if(noServer){
+const commonPay = function commonPay({ orderData, discount = 0, success, fail }) {
+  if (noServer) {
     success?.({
-      package:"fake",
-      timeStamp: Math.floor(Date.now() / 1000),
+      package: "fake",
+      timeStamp: Math.floor(Date.now() / 1000) + "",
       nonceStr: "",
       signType: "RSA",
-      paySign: "MOCK"
+      paySign: "MOCK",
     });
     return;
   }
   wx.showLoading({ title: "loading order" });
   wx.request({
-    url: `${host}/commonOrder`,
+    url: `${host}/payOrderV3`,
     method: "POST",
     data: {
-      total,
       appid,
-      attach,
-      body,
-      id,
+      goods_detail: orderData.map((item) => ({
+        merchant_goods_id: Math.random().toString(36).substring(2, 12),
+        wechatpay_goods_id: Math.floor(Math.random() * 10000).toString(),
+        goods_name: item.title || item.goodsName,
+        quantity: item.quantity,
+        unit_price: item.price / 100,
+      })),
+      discount: discount / 100,
+      token: getToken(),
     },
     fail() {
       wx.hideLoading();
@@ -82,7 +93,6 @@ const commonPay = function commonPay({ total = 1, body, attach, id, success, fai
       console.log("mp server resp:", res);
       const { code = -1, ...payInfo } = res?.data || {};
       if (code === 200) {
-        // 换取用户信息成功
         wx.hideLoading();
         success?.(payInfo);
       } else {
@@ -93,4 +103,4 @@ const commonPay = function commonPay({ total = 1, body, attach, id, success, fai
   });
 };
 
-export { loginFromServer, login, logout, getUser, commonPay };
+export { loginFromServer, login, logout, getUserName, commonPay };

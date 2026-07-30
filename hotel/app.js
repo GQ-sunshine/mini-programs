@@ -6,12 +6,21 @@ var httpRequest = require('common/request.js');
 App({
      onLaunch: function (res) {
           this.globalData.noServer = (res.extendData || '').indexOf('noServer=1') !== -1
-          wx.setEnableDebug({
-               enableDebug: false
-          })
+          // wx.setEnableDebug({
+          //      enableDebug: false
+          // })
           var that = this;
           wx.getSystemInfo({
                success: function (res) {
+                    const version = res.version;
+                    if(commonUtils.compareVersion(version, '2.1.1') === -1) {
+                         wx.showModal({
+                              title: i18n['APP版本过低'],
+                              confirmText: i18n['确定'],
+                              content: i18n['为了确保您能使用最新功能，请升级到2.1.1及以上版本'],
+                              showCancel: false
+                         })
+                    }
                     var sdkVersion = res.SDKVersion;
                     var versionCompare = commonUtils.compareVersion(sdkVersion, '2.0.7');
                     if (versionCompare == -1) {

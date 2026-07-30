@@ -1,7 +1,7 @@
 <wxs module="trans" src="../../i18n/index.wxs"></wxs>
 <view class="container whiteBg">
     <view class="topView horizontal">
-        <view bindtap="titleClick" class="{{['titleView','center',item.type==current?'choiceTitleTextStyle':'unChoiceTitleTextStyle']}}" wx:for="{{titelList}}">
+        <view bindtap="titleClick" class="{{['titleView','center',item.type==current?'choiceTitleTextStyle':'unChoiceTitleTextStyle']}}" wx:for="{{titelList}}" wx:key="type">
             {{''+item.title+''}}
             <view class="bottomLine1" style="{{item.type==current?'width:60rpx;':'width:0%;'}}"></view>
         </view>
@@ -17,7 +17,7 @@
                                 <view style="margin-top:0rpx;">{{lang.historyEmpty}}</view>
                                 <view style="margin-top:10rpx;">{{lang.buy}}</view>
                             </view>
-                            <view class="basic-style" style="margin-bottom:30rpx;" wx:if="{{orderlist!=null&&orderlist.length>0}}" wx:for="{{orderlist}}" wx:for-item="orderItem" wx:for-index="index">
+                            <view class="basic-style" style="margin-bottom:30rpx;" wx:if="{{orderlist!=null&&orderlist.length>0}}" wx:for="{{orderlist}}" wx:for-item="orderItem" wx:for-index="index" wx:key="orderId">
                                 <view bindtap="toOrderDetail" data-index="{{index}}" class="vertical order-info-group ">
                                     <view class="flex justify-between vertical-center ">
                                         <view class="flex justify-content-start vertical-center ">
@@ -52,7 +52,7 @@
                                     </view>
                                     <view class="order-content-group flex justify-between ">
                                         <view class="horizontal " style="flex:1">
-                                            <view style="width:28%; height:100%;margin-right:5%;" wx:if="{{index<=2}}" wx:for="{{orderItem.productDetail}}" wx:for-item="foodItem">
+                                            <view style="width:28%; height:100%;margin-right:5%;" wx:if="{{index<=2}}" wx:for="{{orderItem.productDetail}}" wx:for-item="foodItem" wx:key="id">
                                                 <image class="fill-parent " mode="widthFix" src="{{foodItem.imgUrl}}" style="border-radius:8rpx;"></image>
                                             </view>
                                         </view>
@@ -89,7 +89,7 @@
                                 <view style="margin-top:0rpx;">{{lang.todayEmpty}}</view>
                                 <view style="margin-top:10rpx;">{{lang.buy}}</view>
                             </view>
-                            <view class="basic-style" style="margin-bottom:30rpx;" wx:if="{{todayOrderList!=null&&todayOrderList.length>0}}" wx:for="{{todayOrderList}}" wx:for-item="orderItem" wx:for-index="index">
+                            <view class="basic-style" style="margin-bottom:30rpx;" wx:if="{{todayOrderList!=null&&todayOrderList.length>0}}" wx:for="{{todayOrderList}}" wx:for-item="orderItem" wx:for-index="index" wx:key="orderId">
                                 <view bindtap="toOrderDetail" data-index="{{index}}" class="vertical order-info-group ">
                                     <view class="flex justify-between vertical-center ">
                                         <view class="flex justify-content-start vertical-center ">
@@ -124,7 +124,7 @@
                                     </view>
                                     <view class="order-content-group flex justify-between ">
                                         <view class="horizontal " style="flex:1">
-                                            <view style="width:28%; height:100%;margin-right:5%;" wx:if="{{index<=2}}" wx:for="{{orderItem.productDetail}}" wx:for-item="foodItem">
+                                            <view style="width:28%; height:100%;margin-right:5%;" wx:if="{{index<=2}}" wx:for="{{orderItem.productDetail}}" wx:for-item="foodItem" wx:key="id">
                                                 <image class="fill-parent " mode="widthFix" src="{{foodItem.imgUrl}}" style="border-radius:8rpx;"></image>
                                             </view>
                                         </view>

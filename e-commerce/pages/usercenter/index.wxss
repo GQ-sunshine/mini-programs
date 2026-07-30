@@ -5,7 +5,7 @@ page {
 .content-wrapper {
   margin-top: 350rpx;
   position: relative;
-  padding: 0 30rpx;
+  padding: 0rpx 30rpx 20rpx 30rpx;
 }
 
 .main-content {

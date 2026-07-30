@@ -29,7 +29,7 @@
         </view>
         <view class="car-group basic-group basic-style">
             <view class="titleStyle" style="padding-top:15px;">{{lang.orderDetails}}</view>
-            <view class="horizontal vertical-center" style="position:relative;min-height:160rpx;width:100%;" wx:for="{{shoppingCar}}">
+            <view class="horizontal vertical-center" style="position:relative;min-height:160rpx;width:100%;" wx:for="{{shoppingCar}}" wx:key="id">
                 <view class="vertical-center" style="height:100%;width:20%;">
                     <view class="gone" style="width:100rpx;height:100rpx;border-radius:16rpx;">
                         <image src="{{item.imgUrl}}" style="height:100rpx;width:100rpx;"></image>

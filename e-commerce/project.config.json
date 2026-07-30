@@ -68,6 +68,7 @@
 	"mockConfig": {
 		"globalOpen": false
 	},
+	"TCSASappid": "mp3q0cigfj5e03z8",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -90,13 +91,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
-					"id": 0,
-					"name": "test",
-					"pathName": "pages/home/home",
-					"query": "noServer=1",
+					"id": -1,
+					"name": "ucenter",
+					"pathName": "pages/usercenter/index",
+					"query": "",
 					"scene": null
 				}
 			]

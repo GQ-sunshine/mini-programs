@@ -105,6 +105,9 @@ Page({
       * 生命周期函数--监听页面加载
       */
      onLoad: function (options) {
+          wx.onCopyUrl(() => {
+               return { query: `name=${this.data.hotelName}&address=${this.data.address}&distance=${this.data.distance}&isFromShare=true` }
+          })
           wx.setNavigationBarTitle({
                title: i18n['酒店详情']
           })
@@ -117,7 +120,11 @@ Page({
           startMonth = app.globalData.startMonth || currentMonth;
           startWeek = app.globalData.startWeek || currentWeek;
 
-          this.initEndDate();
+          if(options.isFromShare) {
+               this.updateEndDate();
+          } else {
+               this.initEndDate();
+          }
           this.setSearchDate();
 
           console.log(options);
@@ -126,14 +133,16 @@ Page({
           var distance = options.distance;
           if (hotelName !== undefined) {
                this.setData({
-                    hotelName: hotelName,
+                    hotelName,
+                    address,
+                    distance,
                     hotelAddress: address + '\n' + i18n['距我'] + distance + i18n['公里']
                });
           }
      },
 
      bookRoom: function (e) {
-          if(app.globalData.userInfo && app.globalData.userInfo.nickName){
+          if(app.globalData.userInfo && (app.globalData.userInfo.nickName || app.globalData.userInfo.phoneNumber)){
                var index = e.currentTarget.dataset.index;
                var room = this.data.roomArray[index];
                wx.navigateTo({
@@ -182,13 +191,13 @@ Page({
 
      getWeekday: function (week) {
           var weekday = new Array(7)
-          weekday[0] = i18n['周日']
           weekday[1] = i18n['周一']
           weekday[2] = i18n['周二']
           weekday[3] = i18n['周三']
           weekday[4] = i18n['周四']
           weekday[5] = i18n['周五']
           weekday[6] = i18n['周六']
+          weekday[7] = i18n['周日']
 
           return weekday[week];
      },
@@ -231,7 +240,7 @@ Page({
                endYear = startYear;
                if (startDay <= startDayCount) {
                     endMonth = startMonth
-                    endDay = startDay + app.globalData.dayCount || 1;
+                    endDay = startDay + (app.globalData.dayCount || 1);
                } else {
                     endMonth = startMonth + 1;
                     endDay = 1;
@@ -300,7 +309,7 @@ Page({
       * 生命周期函数--监听页面卸载
       */
      onUnload: function () {
-
+          wx.offCopyUrl()
      },
 
      /**
@@ -321,6 +330,9 @@ Page({
       * 用户点击右上角分享
       */
      onShareAppMessage: function () {
-
+          return {
+               title: `${this.data.hotelName}：${i18n['您的完美度假选择']}`,
+               path: `/pages/hotelDetail/hotelDetail?name=${this.data.hotelName}&address=${this.data.address}&distance=${this.data.distance}&isFromShare=true`
+          }
      }
 })

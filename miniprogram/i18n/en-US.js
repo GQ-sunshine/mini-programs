@@ -19,7 +19,7 @@ export default {
   paragraph2:
     'The following will demonstrate the capabilities of Mini Program interfaces. See specific attribute parameters in the',
   OpenInterface: 'Open Interfaces',
-  'WeChat login': 'WeChat Login',
+  'login': 'Login',
   'Initiate payment': 'Initiate Payment',
   'Data report': 'Data Reporting',
   'Picture sharing': 'Picture Sharing',
@@ -206,6 +206,7 @@ export default {
   button12: 'Non-clickable Button',
   button13: 'Temporary Session',
   button14: 'For Demonstration',
+  button15: 'Get User Email Address',
   checkboxComponent1: 'Default Style',
   checkboxComponent2: 'Selected',
   checkboxComponent3: 'Unselected',
@@ -392,10 +393,7 @@ export default {
   'choose-invoice8': 'Bank account',
   'choose-invoice9': 'Get invoice header',
   login0: 'Already logged in',
-  login1:
-    'Only need to log in once per WeChat account, and the user information can be automatically pulled according to the WeChat ID every time the page is entered later',
-  login2: 'Only need to log in once per WeChat account',
-  login3: 'WeChat login',
+  login3: 'Login',
   'request-payment0': 'Custom API to initiate payment',
   'request-payment1': 'Payment amount',
   'request-payment2': 'Actual interface application can customize the amount',
@@ -1566,5 +1564,8 @@ export default {
   vtabs12: 'This course consists of four sections and will demonstrate to developers how to open the traffic master function, how to integrate advertising components, and suggestions for integrating different types of mini programs in stages.',
   vtabs13: 'University Competitions',
   vtabs14: '2020 China University Computer Competition',
-  vtabs15: 'WeChat Mini Program Application Development Competition'
+  vtabs15: 'WeChat Mini Program Application Development Competition',
+  '昵称': 'Nickname',
+  '请输入昵称': 'Please enter a nickname',
+  'Page interaction': 'Navigation Bar',
 };

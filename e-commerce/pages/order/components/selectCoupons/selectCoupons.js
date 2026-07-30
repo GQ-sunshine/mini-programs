@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import { couponsData } from './mock';
-const emptyCouponImg = `https://cdn-we-retail.ym.tencent.com/miniapp/coupon/ordersure-coupon-newempty.png`;
+const emptyCouponImg = `https://miniprogram.tcsas-superapp.com/miniapp/coupon/ordersure-coupon-newempty.png`;
 const app = getApp();
 Component({
   properties: {

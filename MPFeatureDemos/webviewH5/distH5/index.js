@@ -1,0 +1,1 @@
+console.log('Offline js is executed here')
