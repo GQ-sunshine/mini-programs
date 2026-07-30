@@ -5,7 +5,7 @@
   <template is="head" data="{{title: 'video'}}" />
   <view class="page-body">
     <view class="page-section tc">
-      <video id="myVideo" src="{{src}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn show-casting-button show-screen-lock-button show-center-play-btn='{{false}}' show-play-btn="{{true}}" muted="{{true}}" show-mute-btn="{{true}}" controls picture-in-picture-mode="{{['push', 'pop']}}" bindenterpictureinpicture='bindVideoEnterPictureInPicture' bindleavepictureinpicture='bindVideoLeavePictureInPicture' enable-auto-rotation="{{enableAutoRotation}}"></video>
+      <video id="myVideo" src="{{src}}" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn show-casting-button show-screen-lock-button show-center-play-btn='{{showCenterPlayBtn}}' show-play-btn="{{showPlayBtn}}" muted="{{true}}" show-mute-btn="{{true}}" controls picture-in-picture-mode="{{['push', 'pop']}}" bindenterpictureinpicture='bindVideoEnterPictureInPicture' bindleavepictureinpicture='bindVideoLeavePictureInPicture' enable-auto-rotation="{{enableAutoRotation}}"></video>
       <view class="auto-rotate-container">
         <view>{{t['videoComponent0']}}</view>
         <view>
@@ -28,6 +28,12 @@
         </button>
         <button bindtap="changeSrc" class="page-body-button" type="primary">
           {{t['videoComponent4']}}
+        </button>
+        <button bindtap="changePlayBtn" class="page-body-button" type="primary">
+          {{showPlayBtn ? '隐藏' : '显示'}} playBtn
+        </button>
+        <button bindtap="changeCenterPlayBtn" class="page-body-button" type="primary">
+          {{showCenterPlayBtn ? '隐藏' : '显示'}} centerPlayBtn
         </button>
       </view>
       <view class="btn-area">

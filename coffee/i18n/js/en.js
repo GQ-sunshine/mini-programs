@@ -81,5 +81,6 @@ module.exports = {
   "退出登录后数据将全部清除": "Note that all data will be cleared upon your logout.",
   "退出成功": "Logged out successfully",
   "暂未开放": "Not available",
-  "登录中": "Logging in"
+  "登录中": "Logging in",
+  "虚拟支付": "Virtual Payment"
 };

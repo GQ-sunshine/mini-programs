@@ -7,7 +7,8 @@ Page({
     lang,
     theme: 'light'
   },
-  onLoad() {
+  onLoad(loadOptions) {
+    console.log('=====loadOptions', loadOptions);
     this.setData({
       t: i18n,
       lang
@@ -17,6 +18,9 @@ Page({
         this.setData({ theme })
       })
     }
+  },
+  onShow(showOptions) {
+    console.log('=====showOptions', showOptions);
   },
   onShareAppMessage() {
     return {

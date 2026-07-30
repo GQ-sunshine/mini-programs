@@ -6,7 +6,8 @@
         "pages/confirmOrder/index",
         "pages/orderDetails/index",
         "pages/remarks/index",
-        "pages/menu/index"
+        "pages/menu/index",
+        "pages/virtualPayment/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -35,6 +36,12 @@
             {
                 "pagePath": "pages/orders/index",
                 "text": "Orders",
+                "iconPath": "static/img/tabBar/dingdan.png",
+                "selectedIconPath": "static/img/tabBar/dingdan-select.png"
+            },
+            {
+                "pagePath": "pages/virtualPayment/index",
+                "text": "Virtual Payment",
                 "iconPath": "static/img/tabBar/dingdan.png",
                 "selectedIconPath": "static/img/tabBar/dingdan-select.png"
             }

@@ -1,0 +1,18 @@
+<view class="search-wrap">
+    <image class="search-icon" src="../../assets/search.png"/>
+    <input class="search-bar" 
+      placeholder-style="font-size: 16px;"
+      placeholder="{{ placeholder }}" 
+      confirm-type="{{ confirmType }}"
+      auto-focus="{{ autoFocus }}"
+      value="{{ value }}"
+      bindinput="onInput"
+      bindfocus="onFocus"
+      bindblur="onBlur"
+      bindconfirm="onConfirm"
+      />
+    <cover-image class="clear-icon" 
+      src="../../assets/clear.png" 
+      wx:if="{{ showClear }}"
+      bindtap="onClear"></cover-image>
+  </view>

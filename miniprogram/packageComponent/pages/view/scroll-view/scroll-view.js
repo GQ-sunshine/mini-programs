@@ -2,12 +2,13 @@ import { i18n, lang } from '../../../../i18n/lang';
 import { log } from '../../../../util/util';
 const order = ['demo1', 'demo2', 'demo3']
 
+console.log('====ownKeys', ownKeys);
 Page({
   data: {
     t: i18n,
     lang,
     theme: 'light',
-    toView: 'green',
+    toView: 'demo1',
     triggered: false
   },
   onLoad() {
@@ -63,7 +64,7 @@ Page({
   },
   tap() {
     for (let i = 0; i < order.length; ++i) {
-      if (order[i] === this.data.toView) {
+      if (order[i] === this.data.toView && order[i + 1]) {
         this.setData({
           toView: order[i + 1],
           scrollTop: (i + 1) * 200

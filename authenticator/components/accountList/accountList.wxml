@@ -1,0 +1,24 @@
+<!-- wxml -->
+<wxs src="../../utils/tools.wxs"  module="tools"></wxs>
+
+<view class="account-list">
+      <view class="account-card" 
+        wx:for="{{ accountList }}" 
+        wx:for-index="idex" 
+        wx:for-item="item"
+        wx:key="idx"
+        data-info="{{ item }}"
+        bind:tap="toDetail">
+        <view class="account-icon" 
+          style="background-color: {{ item.color || tools.randomColor() }}">{{ tools.getSliceName(item.name) }}</view>
+        <view class="account-info">
+          <view class="account-name line-ellipsis">{{ item.name }}</view>
+          <view class="account-description line-ellipsis">{{ item.description }}</view>
+        </view>
+      </view>
+  </view>
+
+  <view wx:if="{{ !accountList.length }}" class="no-accounts">
+    <view>{{ noData }}</view>
+    <!-- <view>Click the "+" button at the bottom to add.</view> -->
+  </view>

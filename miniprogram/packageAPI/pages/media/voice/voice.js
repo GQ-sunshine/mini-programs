@@ -145,6 +145,13 @@ Page({
       encodeBitRate: 192000,
       format: 'mp3',
       frameSize: 50,
+      // duration: 10000,
+      // numberOfChannels: 1,
+      // format: 'wav',
+      // sampleRate: 16000,
+      // encodeBitRate: 96000,
+      // audioSource: ['mic','buildInMic','auto'],
+    
       success: (res) => {
         console.log('recorderManager start', res)
         this.setData({

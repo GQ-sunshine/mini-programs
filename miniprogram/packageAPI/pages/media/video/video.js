@@ -121,7 +121,7 @@ Page({
   },
   chooseMediaImage() {
     wx.chooseMedia({
-      count: 1,
+      count: 10,
       mediaType: ['image'],
       sourceType: ['album', 'camera'],
       maxDuration: 30,
@@ -139,8 +139,26 @@ Page({
   },
   chooseMediaVideo() {
     wx.chooseMedia({
-      count: 1,
+      count: 10,
       mediaType: ['video'],
+      sourceType: ['album', 'camera'],
+      maxDuration: 30,
+      camera: camera[this.data.cameraIndex],
+      success: (res) => {
+        console.log('chooseMedia', res);
+        this.setData({
+          chooseMediaRes: JSON.stringify(res)
+        })
+      },
+      fail: (err) => {
+        console.log('chooseMedia', err);
+      }
+    })
+  },
+  chooseMedia() {
+    wx.chooseMedia({
+      count: 10,
+      mediaType: ['video', 'image'],
       sourceType: ['album', 'camera'],
       maxDuration: 30,
       camera: camera[this.data.cameraIndex],

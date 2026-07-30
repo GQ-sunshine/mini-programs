@@ -1,0 +1,12 @@
+<!--pages/searchPage.wxml-->
+<view class="container">
+    <search 
+        autoFocus="{{ true }}"
+        bindclear="onClear"
+        bindinput="onInput"
+        value="{{ keyword }}"></search>
+
+    <accountList 
+        accountList="{{ filterList }}" 
+        noData="No matching results were found."></accountList>
+</view>

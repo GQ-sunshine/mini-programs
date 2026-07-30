@@ -22,7 +22,8 @@
 		"showShadowRootInWxmlPanel": false,
 		"packNpmRelationList": [],
 		"ignoreUploadUnusedFiles": true,
-		"condition": false
+		"condition": false,
+		"bigPackageSizeSupport": true
 	},
 	"compileType": "miniprogram",
 	"createTime": 1679652660742,
@@ -38,14 +39,9 @@
 		"tabSize": 2
 	},
 	"libVersion": "3.0.0",
-	"appid": "wx582fd5a0920beb62",
-	"TCMPPappid": "touristId",
-	"scripts": {
-		"beforeCompile": "",
-		"beforePreview": "",
-		"beforeUpload": ""
-	},
-	"TCMPPLibVersion": "1.5.42",
+	"appid": "wxc7cd2eb27f935169",
+	"TCMPPappid": "mp8bw8uaok4vnpx5",
+	"TCMPPLibVersion": "0.0.0",
 	"mockConfig": {
 		"globalOpen": true,
 		"rules": [
@@ -55,12 +51,12 @@
 				"apiName": "invokeNativePlugin",
 				"enable": true,
 				"mockType": "API",
-				"returnType": "fail",
-				"resStr": "{\n    \"errMsg\":\"VVV\"\n}",
+				"returnType": "succ",
+				"resStr": "{\n    \"errMsg\":\"testState:ok\",\n    \"result\": 111\n}",
 				"filterList": [
 					{
-						"propName": "",
-						"propRegString": "",
+						"propName": "api_name",
+						"propRegString": "testState",
 						"matchType": "string"
 					}
 				],
@@ -68,33 +64,25 @@
 			}
 		]
 	},
+	"qqappid": "1108100302",
+	"TCSASappid": "mpo3hkwbia6tq67s",
+	"TCSASLibVersion": "0.0.0",
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"BetterBetterappid": "mpu4ggrk3pgrpn2g",
+	"x86IDEbrandNameappid": "mp6wqejmuvjf8aqh",
+	"Smilesappid": "mpvqqqxzt8xxb90w",
+	"tmfLibVersion": "0.0.0",
+	"NewTCSASappid": "mph5959jnty0e7qv",
 	"condition": {
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"current": -1,
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
 		"miniprogram": {
-			"current": -1,
 			"list": [
 				{
-					"id": 0,
-					"name": "tab3",
-					"pathName": "page/extend/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "invoke-native",
-					"pathName": "packageComponent/pages/open/invoke-native-plugin/invoke-native-plugin",
+					"name": "aaa",
+					"pathName": "page/component/index",
 					"query": "",
 					"scene": null
 				}

@@ -1,0 +1,58 @@
+/* pages/virtualPayment/index.wxss */
+.container {
+  padding: 40rpx;
+  font-size: 28rpx;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+}
+
+.form-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50rpx;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  margin-bottom: 25rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.item-label {
+  width: 220rpx;
+  color: #333;
+}
+
+.input {
+  flex: 1;
+  color: #555;
+}
+
+.total-price {
+  margin-top: 40rpx;
+  font-size: 32rpx;
+  text-align: right;
+  color: #333;
+}
+
+.price-value {
+  font-weight: bold;
+  color: #e54d42;
+}
+
+.purchase-btn {
+  margin-top: 50rpx;
+  background-color: #007aff;
+  color: white;
+  border-radius: 50rpx;
+  font-weight: bold;
+}
+
+.purchase-btn:active {
+  background-color: #0056b3;
+}

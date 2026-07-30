@@ -1,0 +1,11 @@
+module.exports = {
+    getSliceName: function(name = '') {
+        return name.slice(0, 2);
+    },
+    randomColor: function() {
+        var colorList = ['#4285f4', '#0a66c2', '#333333', '#1da1f2'];
+        var randomIndex = Math.floor(Math.random() * colorList.length);
+        var color = colorList[randomIndex];
+        return color;
+    }
+}

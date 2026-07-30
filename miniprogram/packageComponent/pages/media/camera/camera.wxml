@@ -7,11 +7,13 @@
 
   <view class="page-body">
     <view class="page-body-wrapper">
-    <view style="margin-bottom: 10px"> {{t['cameraComponent0']}} </view>
+    <view style="margin-bottom: 10px"> {{t['cameraComponent0']}} 扫码</view>
       <camera
         flash="off"
         device-position="{{position}}"
         binderror="error"
+        mode="scanCode"
+        bindscancode="bindscancode"
       >
       </camera>
        <view wx:if="{{showCanvas}}" class="info-container">

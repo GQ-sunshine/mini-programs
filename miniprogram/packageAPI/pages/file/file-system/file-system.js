@@ -392,7 +392,7 @@ Page({
     fs.fstat({
       fd: this.data.fileFD,
       success: (res) => {
-        console.log('res:', res, res.stats.isFile(), res.stats.isDirectory());
+        console.log('fs.fstat res:', res, res.stats.isFile(), res.stats.isDirectory());
         wx.showModal({
           confirmText: i18n['confirm'],
           cancelText: i18n['cancel'],
@@ -417,7 +417,7 @@ Page({
     const fs = wx.getFileSystemManager();
     try {
       const result = fs.fstatSync({ fd: this.data.fileFD });
-      console.log('result:', result, result.isFile(), result.isDirectory());
+      console.log('fs.fstatSync result:', result, result.isFile(), result.isDirectory());
       wx.showModal({
         confirmText: i18n['confirm'],
         cancelText: i18n['cancel'],
@@ -1326,15 +1326,33 @@ Page({
   isFileOrDir() {
     const { dir } = this.data
     let fs = wx.getFileSystemManager()
+    const recursive = true;
     fs.stat({
       path: `${wx.env.USER_DATA_PATH}/${dir}`,
+      recursive,
       success: res => {
-        this.setData({
-          isDir: res.stats.isDirectory(),
-          isFile: res.stats.isFile()
-        })
+        console.log('fs.stat', res);
+
+        if(recursive) {
+          const result = [];
+          res.stats.map(item => {
+            result.push({
+              path: item.path,
+              isDir: item.stats.isDirectory(),
+              isFile: item.stats.isFile()
+            })
+          });
+
+          console.log('====fs.stat recursive result', result);
+        } else {
+          this.setData({
+            isDir: res.stats.isDirectory(),
+            isFile: res.stats.isFile()
+          })
+        }
       },
       fail: res => {
+        console.log('====res', res);
         wx.showToast({
           title: res.errMsg,
           icon: 'none',
@@ -1350,13 +1368,29 @@ Page({
     })
     const { dir } = this.data
     let fs = wx.getFileSystemManager()
+    const recursive = true;
     try {
-      let stats = fs.statSync(`${wx.env.USER_DATA_PATH}/${dir}`)
-      this.setData({
-        isDir: stats.isDirectory(),
-        isFile: stats.isFile()
-      })
+      let result = fs.statSync(`${wx.env.USER_DATA_PATH}/${dir}`, recursive)
+      console.log('fs.statSync', result);
+
+      if(recursive) {
+        const resultInfo = [];
+        result.map(item => {
+          resultInfo.push({
+            path: item.path,
+            isDir: item.stats.isDirectory(),
+            isFile: item.stats.isFile()
+          })
+        });
+        console.log('====fs.statSync recursive result', resultInfo);
+      } else {
+        this.setData({
+          isDir: result.isDirectory(),
+          isFile: result.isFile()
+        })
+      }
     } catch (e) {
+      console.log('eeee', e);
       wx.showToast({
         title: i18n['file-system28'],
         icon: 'none',

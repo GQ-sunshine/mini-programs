@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Account Search",
+  "usingComponents": {
+    "search": "../../components/search/search",
+    "accountList": "../../components/accountList/accountList"
+  }
+}

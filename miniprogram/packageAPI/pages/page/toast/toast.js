@@ -75,11 +75,11 @@ Page({
 
   showModal() {
     wx.showModal({
-      confirmText: i18n['confirm'],
-      cancelText: i18n['cancel'],
+      // confirmText: i18n['confirm'],
+      // cancelText: i18n['cancel'],
       title: 'showModal title',
       content: 'showModal content',
-      showCancel: this.data.showCancel,
+      // showCancel: this.data.showCancel,
       cancelColor: '#F836F7',
       confirmColor: '#F836F7',
       success: (res) => {

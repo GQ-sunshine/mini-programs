@@ -15,7 +15,7 @@ Page({
     theme: 'light',
     x: 0,
     y: 0,
-    scale: 2
+    scale: 0.2
   },
 
   tap() {

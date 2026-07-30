@@ -158,6 +158,70 @@ success() {
     })
   },
 
+  // Listen for embedded mini program height change
+  onEmbeddedHeightChange() {
+    if (!wx.onEmbeddedMiniProgramHeightChange) {
+      wx.showToast({ icon: 'none', title: i18n['jump1'] });
+      return;
+    }
+    this._embeddedHeightHandler = (res) => {
+      wx.showToast({
+        icon: 'none',
+        title: (i18n['jump16'] || 'Embedded height') + ': ' + (res && res.height)
+      });
+      console.log('onEmbeddedMiniProgramHeightChange', res);
+    };
+    wx.onEmbeddedMiniProgramHeightChange(this._embeddedHeightHandler);
+    wx.showToast({ icon: 'none', title: i18n['jump17'] || 'Listener registered' });
+  },
+
+  // Remove embedded mini program height change listener
+  offEmbeddedHeightChange() {
+    if (!wx.offEmbeddedMiniProgramHeightChange) {
+      wx.showToast({ icon: 'none', title: i18n['jump1'] });
+      return;
+    }
+    if (this._embeddedHeightHandler) {
+      wx.offEmbeddedMiniProgramHeightChange(this._embeddedHeightHandler);
+      this._embeddedHeightHandler = null;
+    } else {
+      wx.offEmbeddedMiniProgramHeightChange();
+    }
+    wx.showToast({ icon: 'none', title: i18n['jump18'] || 'Listener removed' });
+  },
+
+  // Listen for API category change
+  onApiCategoryChangeHandler() {
+    if (!wx.onApiCategoryChange) {
+      wx.showToast({ icon: 'none', title: i18n['jump1'] });
+      return;
+    }
+    this._apiCategoryHandler = (res) => {
+      wx.showToast({
+        icon: 'none',
+        title: (i18n['jump19'] || 'API category') + ': ' + (res && res.apiCategory)
+      });
+      console.log('onApiCategoryChange', res);
+    };
+    wx.onApiCategoryChange(this._apiCategoryHandler);
+    wx.showToast({ icon: 'none', title: i18n['jump17'] || 'Listener registered' });
+  },
+
+  // Remove API category change listener
+  offApiCategoryChangeHandler() {
+    if (!wx.offApiCategoryChange) {
+      wx.showToast({ icon: 'none', title: i18n['jump1'] });
+      return;
+    }
+    if (this._apiCategoryHandler) {
+      wx.offApiCategoryChange(this._apiCategoryHandler);
+      this._apiCategoryHandler = null;
+    } else {
+      wx.offApiCategoryChange();
+    }
+    wx.showToast({ icon: 'none', title: i18n['jump18'] || 'Listener removed' });
+  },
+
   // Exit the current mini program
   exitminiprogram() {
     wx.exitMiniProgram({

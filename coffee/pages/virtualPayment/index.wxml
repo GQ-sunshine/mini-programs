@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="form-title">虚拟支付</view>
+  <view class="item">
+    <view class="item-label">币种：</view>
+    <input class="input" value="{{currencyType}}" placeholder="例如：CNY" bindinput="handleInputValue" data-field="currencyType" />
+  </view>
+  <view class="item">
+    <view class="item-label">道具id：</view>
+    <input class="input" value="{{productId}}" placeholder="请输入道具ID" bindinput="handleInputValue" data-field="productId" />
+  </view>
+  <view class="item">
+    <view class="item-label">道具名称：</view>
+    <input class="input" value="{{goodsName}}" placeholder="请输入道具名称" bindinput="handleInputValue" data-field="goodsName" />
+  </view>
+  <view class="item">
+    <view class="item-label">道具单价：</view>
+    <input class="input" value="{{goodsPrice}}" placeholder="例如：1.5" bindinput="handleInputValue" data-field="goodsPrice" type="digit" />
+  </view>
+  <view class="item">
+    <view class="item-label">道具数量：</view>
+    <input class="input" value="{{buyQuantity}}" placeholder="请输入整数" bindinput="handleInputValue" data-field="buyQuantity" type="number" />
+  </view>
+
+  <view class="total-price">
+    总价：<text class="price-value">{{ goodsPrice * buyQuantity }} {{currencyType}}</text>
+  </view>
+
+  <button class="purchase-btn" type="primary" bindtap="handlePurchase">购买</button>
+</view>

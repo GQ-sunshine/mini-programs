@@ -31,7 +31,9 @@ Page({
   data: {
     theme: 'light',
     enableAutoRotation: false,
-    src: "https://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400",
+    src: "https://vod.ishow.co/417594b7vodhk1500042541/c40426165145403714136235326/QIsqmQALoaQA.mp4?t=698ad4f7&us=22246203279648&sign=9dfc29e13622770bc0aec235a28b704d",
+    showPlayBtn: true,
+    showCenterPlayBtn: true
   },
 
   bindInputBlur(e) {
@@ -95,5 +97,15 @@ Page({
         this.setData({ theme })
       })
     }
+  },
+  changePlayBtn() {
+    this.setData({
+      showPlayBtn: !this.data.showPlayBtn
+    });
+  },
+  changeCenterPlayBtn() {
+    this.setData({
+      showCenterPlayBtn: !this.data.showCenterPlayBtn
+    });
   }
 })

@@ -1,0 +1,42 @@
+<!--pages/setting/setting.wxml-->
+<wxs src="../../utils/tools.wxs"  module="tools"></wxs>
+  <view class="settings-content">
+    <view class="settings-section">
+    <view class="settings-section-title">Account Info</view>
+    <view class="settings-form-group">
+      <view class="settings-account-info">
+            <view class="settings-account-icon" 
+      style="background-color: {{ color || tools.randomColor() }}">{{ tools.getSliceName(name) }}</view>
+            <view class="settings-account-text">
+              <view class="settings-account">{{ name }}</view>
+              <view class="settings-account-email line-ellipsis">{{ description }}</view>
+            </view>
+        </view>
+      </view>
+    </view>
+
+      <view class="settings-section">
+        <view class="settings-section-title">Account Update</view>
+        <view class="settings-form-group">
+          <view class="settings-form-label">Account</view>
+          <input type="text" 
+            class="settings-form-input" 
+            placeholder="Please enter account"
+            bindinput="onAccountChange"/>
+        </view>
+      </view>
+
+      <view class="settings-section">
+        <view class="settings-section-title">Danger area</view>
+        <view class="settings-danger-zone">
+          <button class="settings-danger-button" bind:tap="deleteAccount">
+            Delete this account
+          </button>
+        </view>
+      </view>
+
+
+      <view class="settings-footer">
+        <button class="save-button" disabled="{{ !newName }}" bind:tap="saveAccount">Save Changes</button>
+      </view>
+  </view>

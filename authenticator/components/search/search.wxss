@@ -1,0 +1,31 @@
+.search-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  width: 38rpx;
+  height: 38rpx;
+  position: absolute;
+  left: 32rpx;
+  top: 32rpx;
+}
+
+.clear-icon {
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 14rpx;
+  top: 14rpx;
+  padding: 28rpx;
+}
+
+.search-bar {
+  display: flex;
+  background-color: var(--card-color);
+  border-radius: 50rpx;
+  padding: 24rpx 32rpx 24rpx 96rpx;
+  box-shadow: var(--box-shadow);
+  margin: 48rpx 0;
+  align-items: center;
+}

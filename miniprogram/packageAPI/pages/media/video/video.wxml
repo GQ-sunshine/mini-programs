@@ -72,6 +72,9 @@
         <button class="view-button" size="mini" plain="true" bindtap="chooseMediaVideo">
           chooseMedia-{{t['video8']}}
         </button>
+         <button class="view-button" size="mini" plain="true" bindtap="chooseMedia">
+          chooseMedia
+        </button>
         <view class="view-text">{{chooseMediaRes}}</view>
         <button class="view-button" size="mini" plain="true" bindtap="requestBackgroundPlayback">
           requestBackgroundPlayback

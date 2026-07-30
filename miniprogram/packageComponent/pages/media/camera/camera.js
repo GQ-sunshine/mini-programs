@@ -237,5 +237,8 @@ Page({
         this.setData({ theme })
       })
     }
+  },
+  bindscancode(result) {
+    console.log('result', result);
   }
 })

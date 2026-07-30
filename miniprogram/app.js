@@ -7,8 +7,74 @@ import { log } from './util/util'
 const themeListeners = [];
 global.isDemo = true;
 
+    function formatJsError(type, args) {
+      let errorType = "";
+      let errorValue = "";
+      let stack = "";
+      let stackArr = [];
+
+      try {
+          if (type === "MpError") {
+              // wx.onError 传入的是字符串（小程序特性，不是标准 Error 对象）
+              stack = args;
+              stackArr = args.split("\n");
+              // 错误类型在第3行，例如 "TypeError: Cannot read property..."
+              errorType = stackArr[2].split(":")[0];
+              errorValue = stackArr[2].split(":").slice(1).join("");
+          } 
+          else if (type === "PromiseError") {
+              // wx.onUnhandledRejection 传入 {promise, reason}
+              stack = args.reason.stack ? args.reason.stack : args.reason;
+              if (args.reason && args.reason.stack) {
+                  stackArr = args.reason.stack.split("\n");
+              } else if (typeof args.reason === "string") {
+                  stackArr = [args.reason];
+              } else {
+                  stackArr = [];
+              }
+              errorType = "PromiseError";
+              errorValue = "-";
+          } 
+          else if (type === "VueError") {
+              stack = args.stack;
+              stackArr = args.stack.split("\n");
+              errorType = stackArr[0].split(":")[0];
+              errorValue = args.message;
+          } 
+          else {
+              stack = args.toString();
+              errorType = "Error";
+              errorValue = args.toString();
+          }
+      } catch (e) {
+          errorType = "Error";
+          errorValue = "";
+      }
+
+      // // 上报数据
+      // reportError({
+      //     type: errorType,        // TypeError / PromiseError / VueError 等
+      //     message: errorValue,     // 错误消息
+      //     stack: stack,            // 完整堆栈字符串
+      //     page: getCurrentPage(),  // 当前页面
+      //     timestamp: Date.now(),
+      //     level: "error"
+      // });
+      console.log('=====stack', stack);
+    }
+
+wx.onError(err => {
+  console.log('Error:', err);
+ formatJsError('MpError', err);
+});
+
 App({
   onLaunch(opts, data) {
+
+    console.log('=====wx.getSystemInfoSync', wx.getSystemInfoSync());
+    // wx.setEnableDebug({
+    //   enableDebug: true
+    // })
     const updateManager = wx.getUpdateManager()
     updateManager.onCheckForUpdate(function (res) {
       // Callback after requesting new version information
@@ -116,12 +182,21 @@ App({
     }
   },
   onError(err) {
+    formatJsError('MpError', err);
+
     log('App Error--------', err)
   },
   onPageNotFound(opts) {
     log('Page Not Found--------', opts)
   },
-  onUnhandledRejection(opts) {
+  /**
+ * 处理未捕获的 Promise 拒绝事件
+ * @param {Object} opts - 未捕获拒绝事件的相关信息
+ * @param {string|number} opts.type - 事件类型
+ * @param {Promise} opts.promise - 被拒绝的 Promise 对象
+ * @param {*} opts.reason - 拒绝的原因
+ */
+onUnhandledRejection(opts) {
     log('Unhandled Rejection--------', opts)
   },
   onThemeChange({ theme }) {

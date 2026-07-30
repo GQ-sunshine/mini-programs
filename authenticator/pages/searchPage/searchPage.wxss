@@ -1,0 +1,4 @@
+/* pages/searchPage.wxss */
+.container {
+  margin: 0 40rpx;
+}

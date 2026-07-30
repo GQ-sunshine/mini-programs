@@ -1,5 +1,6 @@
 import CustomPage from '../../base/CustomPage'
-import { i18n } from '../../../i18n/lang'
+// import { i18n } from '../../../i18n/lang'
+const i18n = {}
 
 CustomPage({
   onShareAppMessage() {

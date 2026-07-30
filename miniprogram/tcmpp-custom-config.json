@@ -1,18 +1,27 @@
 {
-    "extApi": [{
-		"name": "testApi",
-		"sync": false,
-		"params": {
-			"url": ""
-		}
-	},
-	{
-		"name": "testApiSync",
-		"sync": true,
-		"params": {
-			"name": "",
-			"title": ""
-		}
-	}
-]
+  "extApi": [
+    {
+      "name": "customSyncEvent",
+      "sync": true,
+      "params": {
+        "name": "",
+        "age": ""
+      }
+    },
+    {
+      "name": "customAsyncEvent",
+      "sync": false,
+      "params": {
+        "name": "",
+        "age": ""
+      }
+    },
+    {
+      "name": "getAppBaseInfo",
+      "sync": false,
+      "params": {
+      }
+    }
+  ],
+  "overwriteWxApi": true
 }

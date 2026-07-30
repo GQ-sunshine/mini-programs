@@ -221,7 +221,7 @@
     ]
   },
   "networkTimeout": {
-    "request": 10000,
+    "request": 100,
     "connectSocket": 10000,
     "uploadFile": 10000,
     "downloadFile": 10000
@@ -229,11 +229,7 @@
   "workers": "workers",
   "style": "v2",
   "permission": {
-    "scope.userLocation": {
-      "desc": "Your location will be used for the mini-program's location display",
-      "desc-en": "where are you? do you know",
-      "desc-ar": "انا من السعودية"
-    }
+    
   },
   "sitemapLocation": "sitemap.json",
   "darkmode": true,

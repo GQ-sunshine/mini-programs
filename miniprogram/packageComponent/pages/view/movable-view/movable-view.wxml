@@ -54,7 +54,7 @@
     <view class="page-section">
       <view class="page-section-title">{{t['Scalable']}}</view>
       <movable-area scale-area>
-        <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}">text</movable-view>
+        <movable-view direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.1" scale-max="4" scale-value="{{scale}}">text111</movable-view>
       </movable-area>
     </view>
 

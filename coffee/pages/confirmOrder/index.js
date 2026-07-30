@@ -1,5 +1,7 @@
 import i18n from '../../i18n/index';
-import { getShoppingCar, getStoreInfo, getUserInfo, saveOrderInfo } from '../../service/storage'
+import { getShoppingCar, getStoreInfo, getUserInfo, saveOrderInfo } from '../../service/storage';
+import utils from '../../utils/index';
+
 Page({
     data: {
         phoneNumber: '',
@@ -119,7 +121,7 @@ Page({
             productDetail: this.data.shoppingCar,
             storeInfo: this.data.storeInfo
         }
-        console.log(orderData)
+        console.log('orderData', orderData);
 
         const { query: { noServer } } = wx.getEnterOptionsSync();
         if (`${noServer}` === '1') {
@@ -131,15 +133,23 @@ Page({
                 paySign: "MOCK"
             }, orderData)
         } else {
+            const goodsDetails = orderData.productDetail.map(item => {
+                return {
+                    merchant_goods_id: item.id,
+                    goods_name: item.productName,
+                    quantity: item.number,
+                    unit_price: item.price
+                }
+            });
+
+            console.log('=====goodsDetails', goodsDetails);
             wx.request({
-                url: 'https://tcmpp.woyaojianfei.club/commonOrder',
+                url: `${utils.miniServer}/payOrderV3`,
                 method: 'POST',
                 data: {
-                    appid: 'mp72qkrsyxxby6pl',
-                    attach: "Coffee pay order",
-                    body: "Coffee pay order body",
-                    total: this.data.orderTotal,
-                    id: getUserInfo().id,
+                    appid: utils.getAppId(),
+                    token: getUserInfo().token,
+                    goods_detail: goodsDetails,
                 },
                 success: (res) => {
                     if (res.data.code === 200) {

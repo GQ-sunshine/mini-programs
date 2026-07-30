@@ -1,0 +1,6 @@
+<view class="login-wrap">
+  <!-- 需要使用 button 来授权登录 -->
+  <image src="/assets/logo.png" class="login-icon"/>
+  <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="login-btn">APP authorization login</button>
+  <view class="login-tips">You can continue the operation after logging in with authorization.</view>
+</view>

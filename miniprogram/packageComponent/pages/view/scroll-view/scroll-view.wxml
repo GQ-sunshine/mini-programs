@@ -14,6 +14,8 @@
           <view id="demo2" class="scroll-view-item demo-text-2"></view>
           <view id="demo3" class="scroll-view-item demo-text-3"></view>
         </scroll-view>
+
+        <button bindtap="tap">move</button>
       </view>
     </view>
     <view class="page-section">

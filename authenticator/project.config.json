@@ -1,0 +1,111 @@
+{
+  "projectid": "mp63iwq3mvjxspoq_authenticator",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": false,
+    "minified": true,
+    "newFeature": true,
+    "autoAudits": false,
+    "nodeModules": true,
+    "uploadWithSourceMap": true,
+    "uglifyFileName": true,
+    "remoteDebugLogEnable": true,
+    "prefetch": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "compileType": "miniprogram",
+  "createTime": 1743147817472,
+  "accessTime": 1743147817472,
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "projectname": "authenticator",
+  "appid": "wx6da87ffad4b40803",
+  "libVersion": "3.7.12",
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "mockConfig": {
+    "globalOpen": true,
+    "rules": [
+      {
+        "ruleName": "未命名规则",
+        "ruleId": "b703e399-e386-451a-b204-4502595d5ef4",
+        "apiName": "invokeNativePlugin",
+        "enable": true,
+        "mockType": "API",
+        "returnType": "fail",
+        "resStr": "{\n    \"fail\": \"no\"\n}",
+        "filterList": [
+          {
+            "propName": "name222",
+            "propRegString": "2222",
+            "matchType": "string"
+          }
+        ],
+        "verifyFail": false
+      },
+      {
+        "ruleName": "未命名规则",
+        "ruleId": "d120084b-bb36-44c1-a07a-5eab0ca1a815",
+        "apiName": "invokeNativePlugin",
+        "enable": true,
+        "mockType": "API",
+        "returnType": "succ",
+        "resStr": "{\n    \"success\": \"ok\"\n}",
+        "filterList": [
+          {
+            "propName": "name",
+            "propRegString": "jdkjsjh",
+            "matchType": "string"
+          }
+        ],
+        "verifyFail": false
+      }
+    ]
+  },
+  "Smilesappid": "mp0u6dximph9i9m2",
+  "iQIYIappid": "mp0u6dximph9i9m2",
+  "TCSASappid": "touristId",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": -1,
+      "list": [
+        {
+          "id": -1,
+          "name": "setting",
+          "pathName": "pages/setting/setting",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

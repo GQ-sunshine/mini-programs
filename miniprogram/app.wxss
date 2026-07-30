@@ -1,6 +1,6 @@
-@import "./page/common/lib/weui-old.wxss";
+/* @import "./page/common/lib/weui-old.wxss"; */
 /* @import "./page/common/lib/weui.wxss"; */
-@import "./page/common/common.wxss";
+/* @import "./page/common/common.wxss"; */
 
 /* reset */
 page {

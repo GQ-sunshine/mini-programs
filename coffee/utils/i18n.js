@@ -12,4 +12,8 @@ export const setTabBar = () => {
         index: 2,
         text: i18n.t('订单'),
     });
+    wx.setTabBarItem({
+        index: 3,
+        text: i18n.t('虚拟支付'),
+    });
 }

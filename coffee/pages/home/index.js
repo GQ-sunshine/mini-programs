@@ -2,6 +2,8 @@ import Dialog from 'vant-weapp/dialog/dialog';
 import i18n from '../../i18n/index';
 import { clearAll, getUserInfo, saveUserInfo } from '../../service/storage';
 import { setTabBar } from '../../utils/i18n';
+import utils from '../../utils/index';
+
 Page({
     data: {
         userInfo: null,
@@ -81,15 +83,17 @@ Page({
         } else {
             wx.login({
                 success: ({ code }) => {
+                    console.log('======wxlogin code', code);
                     if (code) {
                         wx.request({
-                            url: 'https://tcmpp.woyaojianfei.club/getUserInfo',
+                            url: `${utils.miniServer}/getUserInfo`,
                             method: 'POST',
                             data: {
-                                appid: 'mp72qkrsyxxby6pl',
+                                appid: utils.getAppId(),
                                 code: code
                             },
                             success: (res) => {
+                                console.log('======res', res);
                                 const { data } = res?.data || {};
                                 const userInfo = { ...data, memberScore: Math.round(Math.random() * 10000) }
                                 if (userInfo.account) { // 换取用户信息成功
@@ -105,7 +109,8 @@ Page({
                                 }
                                 wx.hideLoading()
                             },
-                            fail() {
+                            fail(err) {
+                                console.log('======res', err);
                                 this.defaultLogin();
                                 wx.hideLoading()
                             }
@@ -113,7 +118,8 @@ Page({
 
                     }
                 },
-                fail() {
+                fail(err) {
+                     console.log('======wxlogin fail', err);
                     wx.hideLoading()
                 }
             })

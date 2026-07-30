@@ -141,10 +141,14 @@ Page({
       canvasId: 'canvas',
       success(res) {
         console.log(res)
-        wx.showToast({
-          icon: 'none',
-          title: `${i18n['canvas2']}${res.tempFilePath}`
-        })
+        // wx.showToast({
+        //   icon: 'none',
+        //   title: `${i18n['canvas2']}${res.tempFilePath}`
+        // })
+        wx.showShareImageMenu({
+          // title: '这是已截好的图',
+          path: res.tempFilePath
+        });
       },
 
       fail(res) {

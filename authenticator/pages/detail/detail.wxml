@@ -1,0 +1,31 @@
+<wxs src="../../utils/tools.wxs"  module="tools"></wxs>
+<view class="container account-content">
+   <view class="detail-account-icon" 
+        style="background-color: {{ accountInfo.color || tools.randomColor() }}">{{ tools.getSliceName(accountInfo.name) }}</view>
+    <view class="detail-account-name line-ellipsis">{{ accountInfo.name }}</view>
+    <view class="detail-account-description line-ellipsis">{{ accountInfo.description }}</view>
+
+    <view class="detail-code-container">
+        <view class="detail-verification-code">{{ code }}</view>
+        <view class="detail-timer-container">
+          <view class="detail-timer-circle" style="--progress: {{ progress }}deg;">
+            <span class="detail-timer-text">{{ timer }}</span>
+          </view>
+        </view>
+    </view>
+    <view class="detail-actions">
+        <view class="detail-action-button">
+          <view class="detail-action-icon" bind:tap="onCopy">
+            <image src="../../assets/copy.png" class="action-icon"/>
+          </view>
+          <view class="detail-action-text">Copy</view>
+        </view>
+
+        <view class="detail-action-button">
+          <view class="detail-action-icon" bind:tap="toSettings">
+             <image src="../../assets/setting.png" class="action-icon"/>
+          </view>
+          <view class="detail-action-text">Setting</view>
+        </view>
+      </view>
+</view>

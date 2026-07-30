@@ -42,6 +42,7 @@ Page({
 
     requestTask = wx.request({
       url: requestUrl,
+      // timeout: 600000,
       data: {
         theme: 'light',
         noncestr: Date.now()

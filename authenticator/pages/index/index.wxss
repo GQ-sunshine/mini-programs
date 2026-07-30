@@ -1,0 +1,104 @@
+.container {
+  margin: 0 40rpx;
+}
+
+.account-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32rpx;
+  margin-bottom: 160rpx;
+}
+
+.account-card {
+  background-color: var(--card-color);
+  border-radius: var(--border-radius);
+  padding: 32rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.account-card:active {
+  transform: scale(0.98);
+}
+
+.account-icon {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 24rpx;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 32rpx;
+  flex-shrink: 0;
+  color: white;
+  font-size: 48rpx;
+}
+
+.account-info {
+  flex-grow: 1;
+}
+
+.account-name {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-bottom: 8rpx;
+  color: var(--text-primary);
+  max-width: 65vw;
+}
+
+.account-description {
+  font-size: 28rpx;
+  color: var(--text-secondary);
+  max-width: 80vw;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color);
+  color: white;
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 56rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8rpx 24rpx rgba(66, 133, 244, 0.4);
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  outline: none;
+  font-size: 48rpx;
+}
+
+.add-button:active {
+  transform: translateX(-50%) scale(0.92);
+}
+
+.animation-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(66, 133, 244, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(66, 133, 244, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(66, 133, 244, 0);
+  }
+}
+
+.add-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
